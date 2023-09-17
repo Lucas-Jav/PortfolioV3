@@ -1,33 +1,20 @@
-import { Context } from 'react';
 import Box from '@mui/material/Box';
 import BasicSpeedDial from '../components/ButtonFloat/ButtonFloat';
+import Presentation from '../components/Presentation/Presentation';
 
-interface HomeProps {
-    colorModeContext: Context<{
-        toggleColorMode: () => void;
-    }>;
-}
-
-function Home({
-    colorModeContext
-}:HomeProps) {
+function Home() {
     
     return (
         <Box
             sx={{
-                display: "flex",
                 width: "100%",
                 minHeight: "200vh",
-                alignItems: "center",
-                justifyContent: "center",
-                bgcolor: "background.default",
                 color: "text.primary",
-                borderRadius: 1,
-                p: 3,
             }}
         >
+            <Presentation name='Lucas Oliveira' works={["Desenvolvedor Front End...", "Designer UI & UX..."]}/>
 
-            <BasicSpeedDial colorModeContext={colorModeContext}/>
+            <BasicSpeedDial />
         </Box>
     );
 }
