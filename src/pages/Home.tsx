@@ -10,7 +10,7 @@ interface HomeProps {
 
 function Home({
     colorModeContext
-}:HomeProps) {
+}: HomeProps) {
     
     return (
         <Box
