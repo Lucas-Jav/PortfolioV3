@@ -1,4 +1,4 @@
-import { useState, useMemo, createContext, useEffect } from 'react';
+import { useState, useMemo, createContext } from 'react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Home from './pages/Home';
 
