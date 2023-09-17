@@ -9,6 +9,7 @@ function Presentation({
     name,
     works
 }:PresentationProps) {
+    console.log(name, works)
     return (
         <Box
             sx={{
