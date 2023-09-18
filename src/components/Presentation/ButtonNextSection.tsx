@@ -9,7 +9,9 @@ function BtnNextSection() {
                 bottom: -8
             }}>
             <a href="#about">
-                <img src="/src/assets/imgs/to-button.png" alt="" />
+                <img 
+                    src="/images/to-button.png" 
+                    alt="To-button" loading="lazy"/>
             </a>
         </Box>
     )
