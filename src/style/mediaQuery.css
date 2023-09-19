@@ -1,0 +1,23 @@
+@media (max-width: 1440px) {
+    #about {
+        padding: 180px 150px;
+    }
+}
+
+@media (max-width: 1024px) {
+    #about {
+        width: 100%;
+        padding: 180px 100px;
+        flex-direction: column !important;
+        gap: 50px;
+    }
+
+    .blockAbout {
+        max-width: 100% !important;
+    }
+
+    .blockAbout a {
+        max-width: 100%;
+        text-align: end !important;
+    }
+}

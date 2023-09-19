@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-
+import imgToBotton from "/public/images/to-button.png";
 
 function BtnNextSection() {
     return(
@@ -10,8 +10,8 @@ function BtnNextSection() {
             }}>
             <a href="#about">
                 <img 
-                    src="/images/to-button.png" 
-                    alt="To-button" loading="lazy"/>
+                    src={imgToBotton} 
+                    alt="To-botton" loading="lazy"/>
             </a>
         </Box>
     )
