@@ -1,9 +1,9 @@
 # Fluxo de trabalho simples para o implementação em produção de conteúdo estático para a GitHub Pages
-name: Deploy Master
+name: Deploy Develop
 on:
   # Executa sobre empurrões mirando o ramo padrão
-  pull_request:
-    branches: ['master']
+  push:
+    branches: ['develop']
   # Permite-te executar este fluxo de trabalho manualmente da aba de Actions
   workflow_dispatch:
 # Defina as permissões da GITHUB_TOKEN para permitir a implementação para a GitHub Pages
