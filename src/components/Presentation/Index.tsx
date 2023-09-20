@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import ShowWorks from "./ShowWorks";
 import BtnNextSection from "./ButtonNextSection";
-//import useMediaQuery from '@mui/material/useMediaQuery';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 interface PresentationProps {
     name: string;
@@ -12,7 +12,7 @@ function Presentation({
     name,
     works
 }:PresentationProps) {
-    //const showSize = useMediaQuery('(max-width:748px)');
+    const showBtn = useMediaQuery('(max-width:425px)');
     return (
         <Box
             sx={{
@@ -46,7 +46,9 @@ function Presentation({
                     </Box>
                     <ShowWorks works={works}/>
                 </Box>
-            <BtnNextSection />
+            {!showBtn && (
+                <BtnNextSection />
+            )}
         </Box>
     )
 }
