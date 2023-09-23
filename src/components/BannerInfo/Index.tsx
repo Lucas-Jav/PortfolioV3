@@ -7,7 +7,7 @@ interface BannerProps {
         icon: JSX.Element;
         time: Date;
         specialize: string;
-        variante: "1" | "2";
+        variante: string;
     }>;
 }
 
