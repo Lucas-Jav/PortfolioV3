@@ -18,7 +18,6 @@ function LeftBlock({
 }: LeftBlockProps) {
     const yearBirthday = birthday.getFullYear()
     const currentYear = new Date().getFullYear()
-    console.log(name, birthday, location)
     return (
         <Box 
             className="blockAbout">

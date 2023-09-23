@@ -9,7 +9,6 @@ interface RightBlockProps {
 function RightBlock({
     descriptions
 }: RightBlockProps) {
-    console.log(descriptions)
     return (
         <Box
             className="blockAbout"
