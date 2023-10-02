@@ -1,19 +1,19 @@
 import Box from '@mui/material/Box';
 import Cards from './Cards';
+import { Specializes, User } from '../../types';
+import BannerBottonInfo from './BannerBotton';
+import { useMediaQuery } from '@mui/material';
 
 interface BannerProps {
-    specializes: Array<{
-        id: number;
-        icon: JSX.Element;
-        time: Date;
-        specialize: string;
-        variante: string;
-    }>;
+    specializes: Specializes[];
+    timeSpecializes: User["timeSpecializes"];
 }
 
 function BannerInfo({
-    specializes
+    specializes,
+    timeSpecializes
 }: BannerProps) {
+    const media1040 = useMediaQuery("(max-width: 1040px)");
     return (
         <Box
             sx={{
@@ -28,6 +28,11 @@ function BannerInfo({
                 }}>
                     <Cards 
                         specializes={specializes}/>
+
+                    {!media1040 && (
+                        <BannerBottonInfo 
+                            timeSpecializes={timeSpecializes}/>
+                    )}
                 </Box>
         </Box>
     )

@@ -1,14 +1,12 @@
 import { Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import Navicon from '../NavIcon/Index';
+import { Location } from '../../types';
 
 interface LeftBlockProps {
     name: string;
     birthday: Date;
-    location: {
-        state: string;
-        country: string;
-    };
+    location: Location;
 }
 
 function LeftBlock({

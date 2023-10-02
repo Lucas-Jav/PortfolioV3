@@ -1,17 +1,10 @@
 import Box from '@mui/material/Box';
 import LeftBlock from './LeftBlock';
 import RightBlock from './RightBlock';
+import { User } from '../../types';
 
 interface AboutProps {
-    data: {
-        name: string;
-        birthday: Date;
-        location: {
-            state: string;
-            country: string;
-        };
-        descriptions: string[];
-    }
+    data: Omit<User, 'username' | 'specializes'>
 }
 
 function About({

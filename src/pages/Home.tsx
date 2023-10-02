@@ -6,6 +6,7 @@ import BannerInfo from '../components/BannerInfo/Index';
 import CodeIcon from '@mui/icons-material/Code';
 import WorkIcon from '@mui/icons-material/Work';
 import BrushIcon from '@mui/icons-material/Brush';
+import { User } from '../types';
 
 const propsIcon = {
     color: "#EE7070",
@@ -13,7 +14,7 @@ const propsIcon = {
     width: "3.125rem"
 }
 
-const data = {
+const data: User = {
     name: "Lucas Henrique Oliveira de Amorim",
     username: 'Lucas Oliveira',
     birthday: new Date('2004-03-24'),
@@ -52,6 +53,23 @@ const data = {
             specialize: "Designer",
             variante: "1",
         }
+    ],
+    timeSpecializes: [
+        {
+            id: 1,
+            specialize: "Desenvolvedor",
+            variante: "Front-end"
+        },
+        {
+            id: 2,
+            specialize: "Dezenas de projetos e",
+            variante: "Experiências"
+        },
+        {
+            id: 3,
+            specialize: "Designer Freelancer e",
+            variante: "UI . UX"
+        },
     ]
 }
 
@@ -73,7 +91,8 @@ function Home() {
                 data={data}/>
 
             <BannerInfo 
-                specializes={data.specializes}/>
+                specializes={data.specializes}
+                timeSpecializes={data.timeSpecializes}/>
 
             <BasicSpeedDial />
         </Box>
