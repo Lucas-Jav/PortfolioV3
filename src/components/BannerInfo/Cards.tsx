@@ -1,15 +1,9 @@
 import { Typography, useMediaQuery } from '@mui/material';
 import Box from '@mui/material/Box';
-
+import { Specializes } from '../../types';
 
 interface CardsProps {
-    specializes: Array<{
-        id: number;
-        icon: JSX.Element;
-        time: Date;
-        specialize: string;
-        variante: string;
-    }>;
+    specializes: Specializes[];
 }
 
 function Cards({
@@ -20,7 +14,6 @@ function Cards({
         <Box
             sx={{
                 maxWidth: "1061px",
-
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "space-between",
