@@ -11,7 +11,12 @@ import { User } from '../types';
 import LanguageIcon from '@mui/icons-material/Language';
 import ArchitectureIcon from '@mui/icons-material/Architecture';
 import WorksProjects from '../components/WorksProjects/Index';
-import portfolioV3img from "/public/images/portfoliov3.png"
+import portfolioV3img from "/images/portfoliov3.png";
+import playlistimg from "/images/playlist.png";
+import webscrapingimg from "/images/webscraping.png";
+import pokedeximg from "/images/pokedex.png";
+import burgerImg from "/images/burger.png";
+import todoListImg from "/images/todolist.png";
 
 const propsIcon = {
     color: "#EE7070",
@@ -111,135 +116,94 @@ const data: User = {
         },
         {
             id: 2,
-            name: "Portfolio V3",
-            description: "Portfolio pensado e criado por mim, passando pelo figma e utilizando as tecnicas de UI e UX. E desenvolvido em React + Typescript.",
-            technologies: ["React JS", "Typescript", "Figma"],
+            name: "Playlist",
+            description: "Albuns e faixas dinamicos do grupo Tião carreiro e Pardinho, projeto para vaga de React Trainee da empresa Supliu!",
+            technologies: ["React JS", "Css"],
             links: [
                 {
                     id: 1,
                     type: "GitHub",
-                    link: "https://github.com/Lucas-Jav/PortfolioV3",
+                    link: "https://github.com/Lucas-Jav/playlist",
                     icon: <GitHubIcon sx={propsIcon2}/>
                 }, {
                     id: 2,
                     type: "WebSite",
-                    link: "https://lucas-jav.github.io/PortfolioV3/",
+                    link: "https://playlist-sandy.vercel.app/",
                     icon: <LanguageIcon sx={propsIcon2}/>
-                },
-                {
-                    id: 3,
-                    type: "Figma",
-                    link: "https://www.figma.com/community/file/1290820055556325949/portfolio",
-                    icon: <ArchitectureIcon sx={propsIcon2}/>
                 }
             ],
-            img: portfolioV3img
+            img: playlistimg
         },
         {
             id: 3,
-            name: "Portfolio V3",
-            description: "Portfolio pensado e criado por mim, passando pelo figma e utilizando as tecnicas de UI e UX. E desenvolvido em React + Typescript.",
-            technologies: ["React JS", "Typescript", "Figma"],
+            name: "Search_js",
+            description: "Projeto de pesquisa utilizando Web Scraping para navegar e capturar dados, e rotornar um data que está alinhado com um documento excel.",
+            technologies: ["Node.js", "Web Scraping"],
             links: [
                 {
                     id: 1,
                     type: "GitHub",
-                    link: "https://github.com/Lucas-Jav/PortfolioV3",
+                    link: "https://github.com/Lucas-Jav/Search_Js",
                     icon: <GitHubIcon sx={propsIcon2}/>
-                }, {
-                    id: 2,
-                    type: "WebSite",
-                    link: "https://lucas-jav.github.io/PortfolioV3/",
-                    icon: <LanguageIcon sx={propsIcon2}/>
-                },
-                {
-                    id: 3,
-                    type: "Figma",
-                    link: "https://www.figma.com/community/file/1290820055556325949/portfolio",
-                    icon: <ArchitectureIcon sx={propsIcon2}/>
                 }
             ],
-            img: portfolioV3img
+            img: webscrapingimg
         },
         {
             id: 4,
-            name: "Portfolio V3",
-            description: "Portfolio pensado e criado por mim, passando pelo figma e utilizando as tecnicas de UI e UX. E desenvolvido em React + Typescript.",
-            technologies: ["React JS", "Typescript", "Figma"],
+            name: "Pokedex",
+            description: "Pokedex desenvolvida utilizando a API pokeApiV2, neste projeto você pode buscar por pokemons, e ver suas informações!",
+            technologies: ["Html", "Scss", "JavaScript"],
             links: [
                 {
                     id: 1,
                     type: "GitHub",
-                    link: "https://github.com/Lucas-Jav/PortfolioV3",
+                    link: "https://github.com/Lucas-Jav/Pokedex-API",
                     icon: <GitHubIcon sx={propsIcon2}/>
                 }, {
                     id: 2,
                     type: "WebSite",
-                    link: "https://lucas-jav.github.io/PortfolioV3/",
+                    link: "https://pokedexweb23.netlify.app/",
                     icon: <LanguageIcon sx={propsIcon2}/>
-                },
-                {
-                    id: 3,
-                    type: "Figma",
-                    link: "https://www.figma.com/community/file/1290820055556325949/portfolio",
-                    icon: <ArchitectureIcon sx={propsIcon2}/>
                 }
             ],
-            img: portfolioV3img
+            img: pokedeximg
         },
         {
             id: 5,
-            name: "Portfolio V3",
-            description: "Portfolio pensado e criado por mim, passando pelo figma e utilizando as tecnicas de UI e UX. E desenvolvido em React + Typescript.",
-            technologies: ["React JS", "Typescript", "Figma"],
+            name: "Make Your Burger",
+            description: "Neste projeto você pode criar pedidos, atualizar, ver e deletar. Um controle CRUD, com json-server rodando em uma ambiente externo.",
+            technologies: ["Vue.js", "Css", "Json-Server"],
             links: [
                 {
                     id: 1,
                     type: "GitHub",
-                    link: "https://github.com/Lucas-Jav/PortfolioV3",
+                    link: "https://github.com/Lucas-Jav/Make_Your_Burger_Vue",
                     icon: <GitHubIcon sx={propsIcon2}/>
                 }, {
                     id: 2,
                     type: "WebSite",
-                    link: "https://lucas-jav.github.io/PortfolioV3/",
+                    link: "https://projeto-vue-curso.vercel.app/",
                     icon: <LanguageIcon sx={propsIcon2}/>
-                },
-                {
-                    id: 3,
-                    type: "Figma",
-                    link: "https://www.figma.com/community/file/1290820055556325949/portfolio",
-                    icon: <ArchitectureIcon sx={propsIcon2}/>
                 }
             ],
-            img: portfolioV3img
+            img: burgerImg
         },
         {
             id: 6,
-            name: "Portfolio V3",
-            description: "Portfolio pensado e criado por mim, passando pelo figma e utilizando as tecnicas de UI e UX. E desenvolvido em React + Typescript.",
-            technologies: ["React JS", "Typescript", "Figma"],
+            name: "Todo List",
+            description: "Este projeto permite você criar tarefas, ver, deletar e atualizar, projeto moderno rodando em tempo real. (Ainda está sendo desenvolvido)",
+            technologies: ["Node.js", "MongoDB"],
             links: [
                 {
                     id: 1,
                     type: "GitHub",
-                    link: "https://github.com/Lucas-Jav/PortfolioV3",
+                    link: "https://github.com/Lucas-Jav/to-do-list-express",
                     icon: <GitHubIcon sx={propsIcon2}/>
-                }, {
-                    id: 2,
-                    type: "WebSite",
-                    link: "https://lucas-jav.github.io/PortfolioV3/",
-                    icon: <LanguageIcon sx={propsIcon2}/>
-                },
-                {
-                    id: 3,
-                    type: "Figma",
-                    link: "https://www.figma.com/community/file/1290820055556325949/portfolio",
-                    icon: <ArchitectureIcon sx={propsIcon2}/>
                 }
             ],
-            img: portfolioV3img
+            img: todoListImg
         },
-        
     ]
 }
 

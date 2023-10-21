@@ -1,6 +1,6 @@
 import { Typography } from '@mui/material';
 import Box from '@mui/material/Box';
-import Cv from "/public/pdf/lucas.pdf";
+import Cv from "/pdf/lucas.pdf";
 
 interface NaviconProps {
     subTitle: string;
