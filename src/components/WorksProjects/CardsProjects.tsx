@@ -9,7 +9,6 @@ function CardsProjects({
     worksProject
 }: CardsProjectsProps) {
     
-    console.log(worksProject)
     return (
         <Grid 
             item>
