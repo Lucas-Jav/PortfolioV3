@@ -17,7 +17,6 @@ function WorksProjects({
         <Box
             id="projects"
             sx={{
-                height: "100vh",
                 width: "100%",
                 p: "0px 260px",
             }}>
@@ -43,7 +42,7 @@ function WorksProjects({
                         {worksProjects.map((project) => (
                             <CardsProjects worksProject={project} key={project.id}/>
                         ))}
-                        <Grid container mt={3} className="cardsProjects">
+                        <Grid container mt={5} mb={5} className="cardsProjects">
                             <a href="https://github.com/Lucas-Jav?tab=repositories"
                                 target='_blank'
                                 style={{
@@ -64,8 +63,7 @@ function WorksProjects({
                             </a>
                         </Grid>
                 </Grid>
-                
-            </Box>
+        </Box>
     )
 }
 

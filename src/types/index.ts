@@ -38,4 +38,8 @@ export interface User {
     specializes: Specializes[];
     timeSpecializes: Omit<Specializes, "icon" | "time">[];
     worksProjects: Projects[];
+    techsAll: {
+        techsUseToday: string[];
+        techsUtils: string[];
+    }
 }
