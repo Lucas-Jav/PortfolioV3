@@ -252,7 +252,7 @@ function Home() {
                 color: "text.primary",
             }}
         >
-            <Presentation 
+            {/* <Presentation 
                 name={data.username} 
                 works={data.works}/>
 
@@ -266,7 +266,7 @@ function Home() {
             <WorksProjects 
                 worksProjects={data.worksProjects}/>
 
-            <BasicSpeedDial />
+            <BasicSpeedDial /> */}
         </Box>
     );
 }
