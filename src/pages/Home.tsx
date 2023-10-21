@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import Box from '@mui/material/Box';
-import BasicSpeedDial from '../components/ButtonFloat/Index';
+/* import BasicSpeedDial from '../components/ButtonFloat/Index';
 import Presentation from '../components/Presentation/Index';
 import About from '../components/About/Index';
-import BannerInfo from '../components/BannerInfo/Index';
+import BannerInfo from '../components/BannerInfo/Index'; */
 import CodeIcon from '@mui/icons-material/Code';
 import WorkIcon from '@mui/icons-material/Work';
 import BrushIcon from '@mui/icons-material/Brush';
@@ -11,7 +11,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import { User } from '../types';
 import LanguageIcon from '@mui/icons-material/Language';
 import ArchitectureIcon from '@mui/icons-material/Architecture';
-import WorksProjects from '../components/WorksProjects/Index';
+/* import WorksProjects from '../components/WorksProjects/Index'; */
 
 const propsIcon = {
     color: "#EE7070",
