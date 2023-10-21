@@ -11,12 +11,29 @@ import { User } from '../types';
 import LanguageIcon from '@mui/icons-material/Language';
 import ArchitectureIcon from '@mui/icons-material/Architecture';
 import WorksProjects from '../components/WorksProjects/Index';
+
+// imgs
 import portfolioV3img from "/images/portfoliov3.png";
 import playlistimg from "/images/playlist.png";
 import tw4img from "/images/tw4.png";
 import pokedeximg from "/images/pokedex.png";
 import portfolioV2 from "/images/portfoliov2.png"
 import todoListImg from "/images/todolist.png";
+
+import awsImg from "/images/techs/Aws.png";
+import cssImg from "/images/techs/Css.png";
+import figmaImg from "/images/techs/Figma.png";
+import gitImg from "/images/techs/Git.png";
+import githubImg from "/images/techs/Github.png";
+import htmlImg from "/images/techs/Html.png";
+import jsImg from  "/images/techs/Javascript.png";
+import mongodbImg from "/images/techs/MongoDb.png";
+import nodeImg from "/images/techs/Nodejs.png";
+import reactImg from "/images/techs/React.png";
+import sassImg from "/images/techs/Sass.png";
+import typescriptImg from "/images/techs/Typescript.png";
+import vueImg from "/images/techs/Vue.png";
+import Techs from '../components/Techs/Index';
 
 const propsIcon = {
     color: "#EE7070",
@@ -210,7 +227,26 @@ const data: User = {
             ],
             img: todoListImg
         },
-    ]
+    ],
+    techsAll: {
+        techsUseToday: [
+            reactImg,
+            typescriptImg,
+            jsImg,
+            cssImg,
+            figmaImg,
+            gitImg,
+            githubImg
+        ],
+        techsUtils: [
+            nodeImg,
+            sassImg,
+            mongodbImg,
+            awsImg,
+            vueImg,
+            htmlImg
+        ]
+    }
 }
 
 function Home() {
@@ -236,6 +272,9 @@ function Home() {
 
             <WorksProjects 
                 worksProjects={data.worksProjects}/>
+
+            <Techs 
+                techsAll={data.techsAll}/>
 
             <BasicSpeedDial />
         </Box>
