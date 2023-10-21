@@ -6,12 +6,23 @@ import BannerInfo from '../components/BannerInfo/Index';
 import CodeIcon from '@mui/icons-material/Code';
 import WorkIcon from '@mui/icons-material/Work';
 import BrushIcon from '@mui/icons-material/Brush';
+import GitHubIcon from '@mui/icons-material/GitHub';
 import { User } from '../types';
+import imgPortfolioV3 from "../../public/images/portfolioV3.png"
+import LanguageIcon from '@mui/icons-material/Language';
+import ArchitectureIcon from '@mui/icons-material/Architecture';
+import WorksProjects from '../components/WorksProjects/Index';
 
 const propsIcon = {
     color: "#EE7070",
     height: "3.125rem",
     width: "3.125rem"
+}
+
+const propsIcon2 = {
+    color: "#EE7070",
+    height: "1.25rem",
+    width: "1.25rem"
 }
 
 const data: User = {
@@ -70,6 +81,165 @@ const data: User = {
             specialize: "Designer Freelancer e",
             variante: "UI . UX"
         },
+    ],
+    worksProjects: [
+        {
+            id: 1,
+            name: "Portfolio V3",
+            description: "Portfolio pensado e criado por mim, passando pelo figma e utilizando as tecnicas de UI e UX. E desenvolvido em React + Typescript.",
+            technologies: ["React JS", "Typescript", "Figma"],
+            links: [
+                {
+                    id: 1,
+                    type: "GitHub",
+                    link: "https://github.com/Lucas-Jav/PortfolioV3",
+                    icon: <GitHubIcon sx={propsIcon2}/>
+                }, {
+                    id: 2,
+                    type: "WebSite",
+                    link: "https://lucas-jav.github.io/PortfolioV3/",
+                    icon: <LanguageIcon sx={propsIcon2}/>
+                },
+                {
+                    id: 3,
+                    type: "Figma",
+                    link: "https://www.figma.com/community/file/1290820055556325949/portfolio",
+                    icon: <ArchitectureIcon sx={propsIcon2}/>
+                }
+            ],
+            img: imgPortfolioV3
+        },
+        {
+            id: 2,
+            name: "Portfolio V3",
+            description: "Portfolio pensado e criado por mim, passando pelo figma e utilizando as tecnicas de UI e UX. E desenvolvido em React + Typescript.",
+            technologies: ["React JS", "Typescript", "Figma"],
+            links: [
+                {
+                    id: 1,
+                    type: "GitHub",
+                    link: "https://github.com/Lucas-Jav/PortfolioV3",
+                    icon: <GitHubIcon sx={propsIcon2}/>
+                }, {
+                    id: 2,
+                    type: "WebSite",
+                    link: "https://lucas-jav.github.io/PortfolioV3/",
+                    icon: <LanguageIcon sx={propsIcon2}/>
+                },
+                {
+                    id: 3,
+                    type: "Figma",
+                    link: "https://www.figma.com/community/file/1290820055556325949/portfolio",
+                    icon: <ArchitectureIcon sx={propsIcon2}/>
+                }
+            ],
+            img: imgPortfolioV3
+        },
+        {
+            id: 3,
+            name: "Portfolio V3",
+            description: "Portfolio pensado e criado por mim, passando pelo figma e utilizando as tecnicas de UI e UX. E desenvolvido em React + Typescript.",
+            technologies: ["React JS", "Typescript", "Figma"],
+            links: [
+                {
+                    id: 1,
+                    type: "GitHub",
+                    link: "https://github.com/Lucas-Jav/PortfolioV3",
+                    icon: <GitHubIcon sx={propsIcon2}/>
+                }, {
+                    id: 2,
+                    type: "WebSite",
+                    link: "https://lucas-jav.github.io/PortfolioV3/",
+                    icon: <LanguageIcon sx={propsIcon2}/>
+                },
+                {
+                    id: 3,
+                    type: "Figma",
+                    link: "https://www.figma.com/community/file/1290820055556325949/portfolio",
+                    icon: <ArchitectureIcon sx={propsIcon2}/>
+                }
+            ],
+            img: imgPortfolioV3
+        },
+        {
+            id: 4,
+            name: "Portfolio V3",
+            description: "Portfolio pensado e criado por mim, passando pelo figma e utilizando as tecnicas de UI e UX. E desenvolvido em React + Typescript.",
+            technologies: ["React JS", "Typescript", "Figma"],
+            links: [
+                {
+                    id: 1,
+                    type: "GitHub",
+                    link: "https://github.com/Lucas-Jav/PortfolioV3",
+                    icon: <GitHubIcon sx={propsIcon2}/>
+                }, {
+                    id: 2,
+                    type: "WebSite",
+                    link: "https://lucas-jav.github.io/PortfolioV3/",
+                    icon: <LanguageIcon sx={propsIcon2}/>
+                },
+                {
+                    id: 3,
+                    type: "Figma",
+                    link: "https://www.figma.com/community/file/1290820055556325949/portfolio",
+                    icon: <ArchitectureIcon sx={propsIcon2}/>
+                }
+            ],
+            img: imgPortfolioV3
+        },
+        {
+            id: 5,
+            name: "Portfolio V3",
+            description: "Portfolio pensado e criado por mim, passando pelo figma e utilizando as tecnicas de UI e UX. E desenvolvido em React + Typescript.",
+            technologies: ["React JS", "Typescript", "Figma"],
+            links: [
+                {
+                    id: 1,
+                    type: "GitHub",
+                    link: "https://github.com/Lucas-Jav/PortfolioV3",
+                    icon: <GitHubIcon sx={propsIcon2}/>
+                }, {
+                    id: 2,
+                    type: "WebSite",
+                    link: "https://lucas-jav.github.io/PortfolioV3/",
+                    icon: <LanguageIcon sx={propsIcon2}/>
+                },
+                {
+                    id: 3,
+                    type: "Figma",
+                    link: "https://www.figma.com/community/file/1290820055556325949/portfolio",
+                    icon: <ArchitectureIcon sx={propsIcon2}/>
+                }
+            ],
+            img: imgPortfolioV3
+        },
+        {
+            id: 6,
+            name: "Portfolio V3",
+            description: "Portfolio pensado e criado por mim, passando pelo figma e utilizando as tecnicas de UI e UX. E desenvolvido em React + Typescript.",
+            technologies: ["React JS", "Typescript", "Figma"],
+            links: [
+                {
+                    id: 1,
+                    type: "GitHub",
+                    link: "https://github.com/Lucas-Jav/PortfolioV3",
+                    icon: <GitHubIcon sx={propsIcon2}/>
+                }, {
+                    id: 2,
+                    type: "WebSite",
+                    link: "https://lucas-jav.github.io/PortfolioV3/",
+                    icon: <LanguageIcon sx={propsIcon2}/>
+                },
+                {
+                    id: 3,
+                    type: "Figma",
+                    link: "https://www.figma.com/community/file/1290820055556325949/portfolio",
+                    icon: <ArchitectureIcon sx={propsIcon2}/>
+                }
+            ],
+            img: imgPortfolioV3
+        },
+        
     ]
 }
 
@@ -93,6 +263,9 @@ function Home() {
             <BannerInfo 
                 specializes={data.specializes}
                 timeSpecializes={data.timeSpecializes}/>
+
+            <WorksProjects 
+                worksProjects={data.worksProjects}/>
 
             <BasicSpeedDial />
         </Box>
