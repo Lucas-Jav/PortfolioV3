@@ -8,7 +8,7 @@ import WorkIcon from '@mui/icons-material/Work';
 import BrushIcon from '@mui/icons-material/Brush';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { User } from '../types';
-import imgPortfolioV3 from "../../public/images/portfolioV3.png"
+import imgPortfolioV3 from "/public/images/portfolioV3.png"
 import LanguageIcon from '@mui/icons-material/Language';
 import ArchitectureIcon from '@mui/icons-material/Architecture';
 import WorksProjects from '../components/WorksProjects/Index';
