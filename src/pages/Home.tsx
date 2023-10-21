@@ -25,7 +25,7 @@ const propsIcon2 = {
     width: "1.25rem"
 }
 
-const data: User = {
+/* const data: User = {
     name: "Lucas Henrique Oliveira de Amorim",
     username: 'Lucas Oliveira',
     birthday: new Date('2004-03-24'),
@@ -241,7 +241,7 @@ const data: User = {
         },
         
     ]
-}
+} */
 
 function Home() {
     
