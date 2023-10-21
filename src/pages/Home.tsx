@@ -4,16 +4,16 @@ import Box from '@mui/material/Box';
 import Presentation from '../components/Presentation/Index';
 import About from '../components/About/Index';
 import BannerInfo from '../components/BannerInfo/Index'; */
-import CodeIcon from '@mui/icons-material/Code';
+/* import CodeIcon from '@mui/icons-material/Code';
 import WorkIcon from '@mui/icons-material/Work';
 import BrushIcon from '@mui/icons-material/Brush';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { User } from '../types';
 import LanguageIcon from '@mui/icons-material/Language';
-import ArchitectureIcon from '@mui/icons-material/Architecture';
+import ArchitectureIcon from '@mui/icons-material/Architecture'; */
 /* import WorksProjects from '../components/WorksProjects/Index'; */
 
-const propsIcon = {
+/* const propsIcon = {
     color: "#EE7070",
     height: "3.125rem",
     width: "3.125rem"
@@ -24,7 +24,7 @@ const propsIcon2 = {
     height: "1.25rem",
     width: "1.25rem"
 }
-
+ */
 /* const data: User = {
     name: "Lucas Henrique Oliveira de Amorim",
     username: 'Lucas Oliveira',
@@ -252,7 +252,7 @@ function Home() {
                 minHeight: "100vh",
                 color: "text.primary",
             }}
-        >
+        >aa
             {/* <Presentation 
                 name={data.username} 
                 works={data.works}/>
