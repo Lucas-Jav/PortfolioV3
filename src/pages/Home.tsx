@@ -1,4 +1,3 @@
-
 import Box from '@mui/material/Box';
 import BasicSpeedDial from '../components/ButtonFloat/Index';
 import Presentation from '../components/Presentation/Index';
@@ -12,6 +11,7 @@ import { User } from '../types';
 import LanguageIcon from '@mui/icons-material/Language';
 import ArchitectureIcon from '@mui/icons-material/Architecture';
 import WorksProjects from '../components/WorksProjects/Index';
+import portfolioV3img from "/public/images/portfoliov3.png"
 
 const propsIcon = {
     color: "#EE7070",
@@ -107,7 +107,7 @@ const data: User = {
                     icon: <ArchitectureIcon sx={propsIcon2}/>
                 }
             ],
-            img: "/images/portfolioV3.png"
+            img: portfolioV3img
         },
         {
             id: 2,
@@ -133,7 +133,7 @@ const data: User = {
                     icon: <ArchitectureIcon sx={propsIcon2}/>
                 }
             ],
-            img: "/images/portfolioV3.png"
+            img: portfolioV3img
         },
         {
             id: 3,
@@ -159,7 +159,7 @@ const data: User = {
                     icon: <ArchitectureIcon sx={propsIcon2}/>
                 }
             ],
-            img: "/images/portfolioV3.png"
+            img: portfolioV3img
         },
         {
             id: 4,
@@ -185,7 +185,7 @@ const data: User = {
                     icon: <ArchitectureIcon sx={propsIcon2}/>
                 }
             ],
-            img: "/images/portfolioV3.png"
+            img: portfolioV3img
         },
         {
             id: 5,
@@ -211,7 +211,7 @@ const data: User = {
                     icon: <ArchitectureIcon sx={propsIcon2}/>
                 }
             ],
-            img: "/images/portfolioV3.png"
+            img: portfolioV3img
         },
         {
             id: 6,
@@ -237,7 +237,7 @@ const data: User = {
                     icon: <ArchitectureIcon sx={propsIcon2}/>
                 }
             ],
-            img: "/images/portfolioV3.png"
+            img: portfolioV3img
         },
         
     ]
@@ -252,7 +252,7 @@ function Home() {
                 minHeight: "100vh",
                 color: "text.primary",
             }}
-        >aa
+        >
             <Presentation 
                 name={data.username} 
                 works={data.works}/>
