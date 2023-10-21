@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import Box from '@mui/material/Box';
 import BasicSpeedDial from '../components/ButtonFloat/Index';
 import Presentation from '../components/Presentation/Index';
