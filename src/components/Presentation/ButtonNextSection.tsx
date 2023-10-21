@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import imgToBotton from "/public/images/to-button.png";
+import imgToBotton from "/images/to-button.png";
 
 function BtnNextSection() {
     return(
