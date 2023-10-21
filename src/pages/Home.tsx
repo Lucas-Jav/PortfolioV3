@@ -13,9 +13,9 @@ import ArchitectureIcon from '@mui/icons-material/Architecture';
 import WorksProjects from '../components/WorksProjects/Index';
 import portfolioV3img from "/images/portfoliov3.png";
 import playlistimg from "/images/playlist.png";
-import webscrapingimg from "/images/webscraping.png";
+import tw4img from "/images/tw4.png";
 import pokedeximg from "/images/pokedex.png";
-import burgerImg from "/images/burger.png";
+import portfolioV2 from "/images/portfoliov2.png"
 import todoListImg from "/images/todolist.png";
 
 const propsIcon = {
@@ -136,18 +136,24 @@ const data: User = {
         },
         {
             id: 3,
-            name: "Search_js",
-            description: "Projeto de pesquisa utilizando Web Scraping para navegar e capturar dados, e rotornar um data que está alinhado com um documento excel.",
-            technologies: ["Node.js", "Web Scraping"],
+            name: "TW4 Tcc",
+            description: "Este é um projeto no qual eu fiquei responsável em desenvolver para o meu grupo do tcc da Escola da Nuvem, do curso Fundamentos AWS Cloud.",
+            technologies: ["Html", "Css", "JavaScript"],
             links: [
                 {
                     id: 1,
                     type: "GitHub",
-                    link: "https://github.com/Lucas-Jav/Search_Js",
+                    link: "https://github.com/Lucas-Jav/tccgp4",
                     icon: <GitHubIcon sx={propsIcon2}/>
+                }, 
+                {
+                    id: 2,
+                    type: "WebSite",
+                    link: "https://tccgp4.vercel.app/",
+                    icon: <LanguageIcon sx={propsIcon2}/>
                 }
             ],
-            img: webscrapingimg
+            img: tw4img
         },
         {
             id: 4,
@@ -171,23 +177,23 @@ const data: User = {
         },
         {
             id: 5,
-            name: "Make Your Burger",
-            description: "Neste projeto você pode criar pedidos, atualizar, ver e deletar. Um controle CRUD, com json-server rodando em uma ambiente externo.",
-            technologies: ["Vue.js", "Css", "Json-Server"],
+            name: "Portfolio V2",
+            description: "Portfolio pessoal desenvolvido com base na Netflix, utilizando o designer parecido.",
+            technologies: ["React.js", "Scss"],
             links: [
                 {
                     id: 1,
                     type: "GitHub",
-                    link: "https://github.com/Lucas-Jav/Make_Your_Burger_Vue",
+                    link: "https://github.com/Lucas-Jav/PortfolioLucas",
                     icon: <GitHubIcon sx={propsIcon2}/>
                 }, {
                     id: 2,
                     type: "WebSite",
-                    link: "https://projeto-vue-curso.vercel.app/",
+                    link: "https://portfolio-lucas-roan.vercel.app/",
                     icon: <LanguageIcon sx={propsIcon2}/>
                 }
             ],
-            img: burgerImg
+            img: portfolioV2
         },
         {
             id: 6,
