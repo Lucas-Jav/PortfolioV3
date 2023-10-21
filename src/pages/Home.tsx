@@ -1,19 +1,19 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
+
 import Box from '@mui/material/Box';
-/* import BasicSpeedDial from '../components/ButtonFloat/Index';
+import BasicSpeedDial from '../components/ButtonFloat/Index';
 import Presentation from '../components/Presentation/Index';
 import About from '../components/About/Index';
-import BannerInfo from '../components/BannerInfo/Index'; */
-/* import CodeIcon from '@mui/icons-material/Code';
+import BannerInfo from '../components/BannerInfo/Index';
+import CodeIcon from '@mui/icons-material/Code';
 import WorkIcon from '@mui/icons-material/Work';
 import BrushIcon from '@mui/icons-material/Brush';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { User } from '../types';
 import LanguageIcon from '@mui/icons-material/Language';
-import ArchitectureIcon from '@mui/icons-material/Architecture'; */
-/* import WorksProjects from '../components/WorksProjects/Index'; */
+import ArchitectureIcon from '@mui/icons-material/Architecture';
+import WorksProjects from '../components/WorksProjects/Index';
 
-/* const propsIcon = {
+const propsIcon = {
     color: "#EE7070",
     height: "3.125rem",
     width: "3.125rem"
@@ -24,8 +24,8 @@ const propsIcon2 = {
     height: "1.25rem",
     width: "1.25rem"
 }
- */
-/* const data: User = {
+
+const data: User = {
     name: "Lucas Henrique Oliveira de Amorim",
     username: 'Lucas Oliveira',
     birthday: new Date('2004-03-24'),
@@ -241,7 +241,7 @@ const propsIcon2 = {
         },
         
     ]
-} */
+}
 
 function Home() {
     
@@ -253,7 +253,7 @@ function Home() {
                 color: "text.primary",
             }}
         >aa
-            {/* <Presentation 
+            <Presentation 
                 name={data.username} 
                 works={data.works}/>
 
@@ -267,7 +267,7 @@ function Home() {
             <WorksProjects 
                 worksProjects={data.worksProjects}/>
 
-            <BasicSpeedDial /> */}
+            <BasicSpeedDial />
         </Box>
     );
 }
