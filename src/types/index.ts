@@ -14,6 +14,20 @@ export type Location = {
     country: string;
 }
 
+export type Projects = {
+    id: number;
+    name: string;
+    description: string;
+    technologies: string[];
+    links: Array<{
+        id: number;
+        type: string;
+        link: string;
+        icon: JSX.Element;
+    }>
+    img?: string;
+}
+
 export interface User {
     name: string;
     username: string;
@@ -23,4 +37,5 @@ export interface User {
     descriptions: string[];
     specializes: Specializes[];
     timeSpecializes: Omit<Specializes, "icon" | "time">[];
+    worksProjects: Projects[];
 }
