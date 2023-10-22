@@ -33,7 +33,10 @@ import reactImg from "/images/techs/React.png";
 import sassImg from "/images/techs/Sass.png";
 import typescriptImg from "/images/techs/Typescript.png";
 import vueImg from "/images/techs/Vue.png";
+import reactNativeImg from "/images/techs/ReactNative.png"
+
 import Techs from '../components/Techs/Index';
+import Contact from '../components/Contact/Index';
 
 const propsIcon = {
     color: "#EE7070",
@@ -109,7 +112,7 @@ const data: User = {
             id: 1,
             name: "Portfolio V3",
             description: "Portfolio pensado e criado por mim, passando pelo figma e utilizando as tecnicas de UI e UX. E desenvolvido em React + Typescript.",
-            technologies: ["React JS", "Typescript", "Figma"],
+            technologies: ["React JS", "Typescript", "Figma", "Node.js"],
             links: [
                 {
                     id: 1,
@@ -231,6 +234,7 @@ const data: User = {
     techsAll: {
         techsUseToday: [
             reactImg,
+            reactNativeImg,
             typescriptImg,
             jsImg,
             cssImg,
@@ -275,6 +279,8 @@ function Home() {
 
             <Techs 
                 techsAll={data.techsAll}/>
+
+            <Contact />
 
             <BasicSpeedDial />
         </Box>
