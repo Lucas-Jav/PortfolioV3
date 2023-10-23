@@ -20,6 +20,7 @@ const mailOptions = yup.object().shape({
     text: yup.string().required("Campo obrigatório")
 })
 
+
 function Contact() {
     const methods = useForm({
         resolver: yupResolver(mailOptions),
