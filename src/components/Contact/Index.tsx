@@ -1,10 +1,11 @@
-import { Box, Button, FormHelperText, TextField, Typography } from "@mui/material";
+import { Alert, Box, Button, FormHelperText, TextField, Typography, useMediaQuery } from "@mui/material";
 import Navicon from "../NavIcon/Index";
 import { Controller, FormProvider, useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import GenericInput from "./GenericInput";
+import CircularProgress from '@mui/material/CircularProgress';
 import axios from "axios";
+import { useState } from "react";
 
 
 
@@ -22,6 +23,12 @@ const mailOptions = yup.object().shape({
 
 
 function Contact() {
+    const mediaQuery1024 = useMediaQuery("(max-width: 1024px)");
+    const mediaQuery768 = useMediaQuery("(max-width: 768px)");
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState("");
+    const [success, setSuccess] = useState("");
+
     const methods = useForm({
         resolver: yupResolver(mailOptions),
         defaultValues: {
@@ -34,6 +41,7 @@ function Contact() {
     
     const onSubmit = async (data: DataMail) => {
         try {
+            setLoading((state) => !state);
             const formResponse = {
                 destinatario: data.from,
                 assunto: data.subject,
@@ -45,10 +53,24 @@ function Contact() {
                     "mode": "no-cors"
                 },
             }).then((res) => {
-                if (res.status === 200) reset();
-                console.log(res.data);
+                if (res.status === 200) {
+                    reset();
+                    setLoading((state) => !state);
+                    setSuccess(res.data);
+
+                    setTimeout(() => {
+                        setSuccess("");
+                    }, 3000);
+                }
+            }).catch((err) => {
+                console.error(err);
+                setError(err.message);
+
+                setTimeout(() => {
+                    setError("");
+                }, 3000);
             })
-            console.log(data)
+        
         } catch(err) {
             console.error(err)
         }
@@ -78,25 +100,31 @@ function Contact() {
                         display: "flex",
                         flexDirection: "column",
                         gap: "1rem",
-                        ml: "2rem"
+                        ml: mediaQuery768 ? "" :"2rem"
                     }}>
                         <Controller 
                             name="from"
                             control={control}
                             render={(inputProps) => (
                                 <>
-                                    <GenericInput 
-                                        type="email"
+                                    <TextField
                                         name="email"
+                                        variant="outlined"
+                                        label="Email"
+                                        placeholder="ex: mangoman@email.com"
                                         style={{
-                                            width: "30%"
+                                            width: mediaQuery1024 
+                                            ? mediaQuery768
+                                                ? "100%"  
+                                                :"50%" 
+                                            :"30%"
                                         }}
-                                        placeholder="Email"
                                         value={inputProps.field.value}
                                         onChange={(e) => {
                                             inputProps.field.onChange(e.target.value);
                                         }}
                                         />
+                                    
                                     {inputProps.fieldState.error && (
                                         <FormHelperText error={inputProps.fieldState.error && true}>
                                             {inputProps.fieldState.error.message + ""}
@@ -110,17 +138,24 @@ function Contact() {
                             control={control}
                             render={(inputProps) => (
                                 <>
-                                    <GenericInput 
+                                    <TextField
                                         name="subject"
+                                        variant="outlined"
+                                        label="Assunto"
+                                        placeholder="ex: Bora fazer aquele projeto!"
                                         style={{
-                                            width: "30%",
+                                            width: mediaQuery1024 
+                                            ? mediaQuery768
+                                                ? "100%"  
+                                                :"50%" 
+                                            :"30%"
                                         }}
-                                        placeholder="Assunto"
                                         value={inputProps.field.value}
                                         onChange={(e) => {
                                             inputProps.field.onChange(e.target.value);
                                         }}
                                         />
+
                                     {inputProps.fieldState.error && (
                                         <FormHelperText error={inputProps.fieldState.error && true}>
                                             {inputProps.fieldState.error.message + ""}
@@ -140,8 +175,8 @@ function Contact() {
                                         rows={5}
                                         name="text"
                                         variant="outlined"
-                                        label="Texto"
-                                        placeholder="Texto"
+                                        label="Mensagem"
+                                        placeholder="Escreva sua mensagem"
                                         style={{
                                             width: '100%',
                                             minHeight: '150px',
@@ -164,9 +199,26 @@ function Contact() {
                         <Button 
                             variant="outlined"  
                             onClick={handleSubmit(onSubmit)}
+                            disabled={loading}
                             sx={{
                                 width: "5rem"
-                            }}>Enviar</Button>
+                            }}>{loading ? (
+                                <Box sx={{ display: 'flex' }}>
+                                    <CircularProgress size={22}/>
+                                </Box>
+                            ): (
+                                <>
+                                    Enviar
+                                </>
+                            )}
+                        </Button>
+                        {success !== "" && (
+                            <Alert severity="success">{success}</Alert>
+                        )}
+                        {error !== "" && (
+                            <Alert severity="error">{error}</Alert>
+                        )}
+
                     </Box>
                 </FormProvider>
 

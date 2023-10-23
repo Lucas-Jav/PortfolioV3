@@ -60,7 +60,8 @@ function CardsProjects({
                             <Box mb="1.37rem">
                                 <Box sx={{
                                     display: "flex",
-                                    gap: "0.5rem"
+                                    gap: "0.5rem",
+                                    flexWrap: "wrap"
                                 }}>
                                     {worksProject.technologies.map((tech, index) => (
                                         <Typography
@@ -73,6 +74,7 @@ function CardsProjects({
                                                 fontFamily: "Raleway",
                                                 textAlign: "center",
                                                 p: "5px 8px",
+
                                             }}
                                             key={index}>
                                             {tech}

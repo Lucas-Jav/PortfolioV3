@@ -11,7 +11,7 @@ const genericInput: ForwardRefRenderFunction<
 	InputComponentProps
 > = (
 	{ type, name, placeholder, value, onChange, fullWidth = false, ...rest },
-	ref
+	ref,
 ) => {
 	return (
 		<FormControl variant="outlined" fullWidth={fullWidth} tabIndex={-1}>
@@ -23,6 +23,7 @@ const genericInput: ForwardRefRenderFunction<
 				type={type}
 				{...rest}
 				label={placeholder}
+				placeholder={placeholder}
 				ref={ref}
 				fullWidth={fullWidth}
 				value={value}
