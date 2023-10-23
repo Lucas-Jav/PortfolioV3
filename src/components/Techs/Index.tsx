@@ -8,7 +8,7 @@ interface TechsProps {
 function Techs({
     techsAll
 }: TechsProps) {
-    console.log(techsAll)
+    
     return (
         <Box
             sx={{
