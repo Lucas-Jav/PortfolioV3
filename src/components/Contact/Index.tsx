@@ -76,7 +76,8 @@ function Contact() {
                     sx={{
                         display: "flex",
                         flexDirection: "column",
-                        gap: "1rem"
+                        gap: "1rem",
+                        ml: "2rem"
                     }}>
                         <Controller 
                             name="from"
@@ -111,7 +112,7 @@ function Contact() {
                                     <GenericInput 
                                         name="subject"
                                         style={{
-                                            width: "30%"
+                                            width: "30%",
                                         }}
                                         placeholder="Assunto"
                                         value={inputProps.field.value}
@@ -159,7 +160,12 @@ function Contact() {
                             )}/>
 
 
-                        <Button variant="outlined" onClick={handleSubmit(onSubmit)}>Enviar</Button>
+                        <Button 
+                            variant="outlined"  
+                            onClick={handleSubmit(onSubmit)}
+                            sx={{
+                                width: "5rem"
+                            }}>Enviar</Button>
                     </Box>
                 </FormProvider>
 
