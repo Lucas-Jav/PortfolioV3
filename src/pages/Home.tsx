@@ -11,6 +11,9 @@ import { User } from '../types';
 import LanguageIcon from '@mui/icons-material/Language';
 import ArchitectureIcon from '@mui/icons-material/Architecture';
 import WorksProjects from '../components/WorksProjects/Index';
+import HomeIcon from '@mui/icons-material/Home';
+import EmailIcon from '@mui/icons-material/Email';
+import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
 
 // imgs
 import portfolioV3img from "/images/portfoliov3.png";
@@ -34,9 +37,9 @@ import sassImg from "/images/techs/Sass.png";
 import typescriptImg from "/images/techs/Typescript.png";
 import vueImg from "/images/techs/Vue.png";
 import reactNativeImg from "/images/techs/ReactNative.png"
-
 import Techs from '../components/Techs/Index';
 import Contact from '../components/Contact/Index';
+import { LinkedIn, WhatsApp } from '@mui/icons-material';
 
 const propsIcon = {
     color: "#EE7070",
@@ -54,6 +57,7 @@ const data: User = {
     name: "Lucas Henrique Oliveira de Amorim",
     username: 'Lucas Oliveira',
     birthday: new Date('2004-03-24'),
+    email: "lucasrazebra@gmail.com",
     works: [
         "Desenvolvedor Front End...",
         "Designer UI & UX..."
@@ -250,7 +254,41 @@ const data: User = {
             vueImg,
             htmlImg
         ]
-    }
+    },
+    contactInfo: [
+        {
+            icon: <HomeIcon sx={{fontSize: 20}}/>,
+            text: "Endereço: Bairro Cristo Redentor, Rua Paraíba, nº 143"
+        },
+        {
+            icon: <EmailIcon sx={{fontSize: 20}}/>,
+            text: `Email: lucasrazebra@gmail.com`
+        },
+        {
+            icon: <PhoneAndroidIcon sx={{fontSize: 20}}/>,
+            text: "Telefone: +55 34 99212-9901"
+        }
+    ],
+    linksSocialMedias: [
+        {
+            id: 1,
+            type: "Lucas-Jav",
+            link: "https://github.com/Lucas-Jav",
+            icon: <GitHubIcon sx={{fontSize: 20}}/>
+        },
+        {
+            id: 2,
+            type: "oliveiradilucas",
+            link: "https://www.linkedin.com/in/oliveiradilucas/",
+            icon: <LinkedIn sx={{fontSize: 20}}/>
+        },
+        {
+            id: 3,
+            type: "Whatsapp",
+            link: "https://api.whatsapp.com/send/?phone=5534992129901&text=Ol%C3%A1+Lucas%2C+vim+pelo+seu+trabalho+de+desenvolvedor%21&type=phone_number&app_absent=0",
+            icon: <WhatsApp sx={{fontSize: 20}}/>
+        }
+    ]
 }
 
 function Home() {
@@ -280,7 +318,9 @@ function Home() {
             <Techs 
                 techsAll={data.techsAll}/>
 
-            <Contact />
+            <Contact 
+                contactInfo={data.contactInfo}
+                linksSocialMedia={data.linksSocialMedias}/>
 
             <BasicSpeedDial />
         </Box>
