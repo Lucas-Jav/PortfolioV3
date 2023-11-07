@@ -1,5 +1,4 @@
 import { Alert, Box, Button, FormHelperText, Snackbar, TextField, Typography, useMediaQuery } from "@mui/material";
-import HomeIcon from '@mui/icons-material/Home';
 import Navicon from "../NavIcon/Index";
 import { Controller, FormProvider, useForm } from "react-hook-form";
 import * as yup from "yup";
@@ -35,7 +34,6 @@ function Contact({
     contactInfo,
     linksSocialMedia
 } : ContactProps) {
-    const mediaQuery1024 = useMediaQuery("(max-width: 1024px)");
     const mediaQuery768 = useMediaQuery("(max-width: 768px)");
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
