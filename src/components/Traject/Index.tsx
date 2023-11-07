@@ -76,7 +76,7 @@ function Traject({
                                     flexDirection={media1400 ? "row" : "column"}
                                     gap={4}
                                     width={media1200 ? "100%" : "auto"}
-                                    sx={{overflowX: "scroll"}}
+                                    sx={{overflowX: media1200 ? "scroll" : ""}}
                                     whiteSpace="nowrap"
                                     >
                                     {history.history.map((obj) => (
