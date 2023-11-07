@@ -50,5 +50,20 @@ export interface User {
     };
     contactInfo: ContactInfo[];
     linksSocialMedias: Projects["links"];
+    professionalArea: [AllHistory, AllHistory];
+
 }
 
+export type AllHistory = {
+    name: string;
+    dateFormated: string;
+    history: HistoryWork[];
+}
+
+export type HistoryWork = {
+    title: string;
+    description: string;
+    date: Date;
+    dateFormated: string;
+    date_end?: Date;
+}

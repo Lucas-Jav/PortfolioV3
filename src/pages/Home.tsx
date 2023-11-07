@@ -40,6 +40,7 @@ import reactNativeImg from "/images/techs/ReactNative.png"
 import Techs from '../components/Techs/Index';
 import Contact from '../components/Contact/Index';
 import { LinkedIn, WhatsApp } from '@mui/icons-material';
+import Traject from '../components/Traject/Index';
 
 const propsIcon = {
     color: "#EE7070",
@@ -288,6 +289,45 @@ const data: User = {
             link: "https://api.whatsapp.com/send/?phone=5534992129901&text=Ol%C3%A1+Lucas%2C+vim+pelo+seu+trabalho+de+desenvolvedor%21&type=phone_number&app_absent=0",
             icon: <WhatsApp sx={{fontSize: 20}}/>
         }
+    ],
+    professionalArea: [
+        {
+            name: "Área profisional",
+            dateFormated: "2022 · Atualmente",
+            history: [
+                {
+                    title: "Desenvolvedor React Trainee na Supliu",
+                    description: "Desenvolvimento de sistemas em React e React Native, criando novas features e ferramentas.",
+                    dateFormated: "Agosto/2023 · Atualmente",
+                    date: new Date("2023-08-22")
+                },
+                {
+                    title: "Desenvolvedor Front-End no Patos Hoje",
+                    description: "Colocar em prática, através de códigos, projetar o visual do site responsivo, otimização e correção de bugs, melhorar a usabilidade, utilizando as tecnologias: HTML, CSS, JavaScript e Vue.js.",
+                    dateFormated: "Novembro/2022 · Atualmente",
+                    date: new Date("2022-11-18")
+                },
+            ]
+        },
+        {
+            name: "Acadêmica ",
+            dateFormated: "2021 · Atualmente",
+            history: [
+                {
+                    title: "Fundamentos AWS Cloud ",
+                    description: "O AWS Fundamentos da Escola da Nuvem é um programa rápido e de curta duração, com o principal objetivo de introduzir os principais conceitos e serviços da nuvem AWS.",
+                    dateFormated: "Abril/2023 · Julho/2023",
+                    date: new Date("2023-04-01"),
+                    date_end: new Date("2023-07-18")
+                },
+                {
+                    title: "Desenvolvedor Full Stack",
+                    description: "Aprender do zero a programar ao avançado, novas técnicas, tecnologias, bibliotecas. Com uma metodologia de ensino voltada para o que as empresas precisam",
+                    dateFormated: "Março/2022 · Atualmente",
+                    date: new Date("2022-03-03")
+                },
+            ]
+        },
     ]
 }
 
@@ -317,6 +357,9 @@ function Home() {
 
             <Techs 
                 techsAll={data.techsAll}/>
+
+            <Traject 
+                allHistory={data.professionalArea}/>
 
             <Contact 
                 contactInfo={data.contactInfo}
