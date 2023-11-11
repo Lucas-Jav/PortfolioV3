@@ -13,6 +13,7 @@ function BannerBottonInfo({
     return (
         <Box
             mt={6}
+            
             sx={{
                 bgcolor: "#EE70701A",
                 p: "50px 36px",

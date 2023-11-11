@@ -41,6 +41,11 @@ import Techs from '../components/Techs/Index';
 import Contact from '../components/Contact/Index';
 import { LinkedIn, WhatsApp } from '@mui/icons-material';
 import Traject from '../components/Traject/Index';
+import Footer from '../components/Footer/Index';
+import Header from '../components/Header';
+import { useInView } from 'react-intersection-observer';
+import { useEffect, useState } from 'react';
+
 
 const propsIcon = {
     color: "#EE7070",
@@ -332,7 +337,25 @@ const data: User = {
 }
 
 function Home() {
+    const [ref, inView] = useInView({
+        triggerOnce: true,
+        rootMargin: '0px 0px',
+    });
     
+    const [isHeaderVisible, setIsHeaderVisible] = useState(false);
+    
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsHeaderVisible(window.scrollY > 0);
+        };
+    
+        window.addEventListener('scroll', handleScroll);
+    
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     return (
         <Box
             sx={{
@@ -341,16 +364,22 @@ function Home() {
                 color: "text.primary",
             }}
         >
+            {inView && isHeaderVisible  && <Header />}
+
             <Presentation 
                 name={data.username} 
                 works={data.works}/>
-
-            <About 
-                data={data}/>
-
+            
+            <Box ref={ref}>
+                <About
+                    data={data}/>
+            </Box>
+            
             <BannerInfo 
                 specializes={data.specializes}
                 timeSpecializes={data.timeSpecializes}/>
+
+            <Box id="projectos"/>
 
             <WorksProjects 
                 worksProjects={data.worksProjects}/>
@@ -364,6 +393,8 @@ function Home() {
             <Contact 
                 contactInfo={data.contactInfo}
                 linksSocialMedia={data.linksSocialMedias}/>
+
+            <Footer />
 
             <BasicSpeedDial />
         </Box>

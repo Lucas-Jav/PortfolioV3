@@ -101,7 +101,7 @@ ${data.text}
             sx={{
                 width: "100%",
                 p: "0px 260px",
-                minHeight: "100vh"
+                mb: "150px"
             }}>
                 <Box 
                     mt={"100px"}

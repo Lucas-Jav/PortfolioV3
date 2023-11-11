@@ -15,6 +15,7 @@ function Presentation({
     const showBtn = useMediaQuery('(max-width:425px)');
     return (
         <Box
+            id="home"
             sx={{
                 height: "100vh",
                 width: "100%",

@@ -11,6 +11,7 @@ function Techs({
     
     return (
         <Box
+            id="traject"
             sx={{
                 bgcolor: "#121212",
                 p: "100px 50px",
