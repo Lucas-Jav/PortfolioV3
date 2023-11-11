@@ -3,10 +3,10 @@ name: Deploy Master
 on:
   # Executa sobre empurrões mirando o ramo padrão
   push:
-    branches: ['master']
+    branches: ['master', 'develop']
   
   pull_request:
-    branches: ['master']
+    branches: ['develop', 'master']
   # Permite-te executar este fluxo de trabalho manualmente da aba de Actions
   workflow_dispatch:
 # Defina as permissões da GITHUB_TOKEN para permitir a implementação para a GitHub Pages
@@ -21,6 +21,9 @@ concurrency:
 jobs:
   # Trabalho de implementação individual já que estamos apenas implementando
   deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -44,4 +47,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
-      
