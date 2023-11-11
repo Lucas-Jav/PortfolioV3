@@ -11,7 +11,7 @@ export default defineConfig({
   },
   define: {
     'process.env': {
-      API_URL: process.env.API_URL || "https://api-email-pearl.vercel.app"
+      API_URL: process.env.API_URL
     }
   }
 })
