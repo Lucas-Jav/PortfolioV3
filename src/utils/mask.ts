@@ -39,3 +39,18 @@ export const calcularDiferencaEntreDatas = (data1: Date, data2: Date = new Date(
         }
     }
 }
+
+export const calcYears = (dateOne: Date, dateThwo: Date) => {
+    const nascimento = new Date(dateOne);
+    const atual = dateThwo ? new Date(dateThwo) : new Date();
+
+    let year = atual.getFullYear() - nascimento.getFullYear();
+    const months = atual.getMonth() - nascimento.getMonth();
+    const days = atual.getDate() - nascimento.getDate();
+
+    if (months < 0 || (months === 0 && days < 0)) {
+        year--;
+    }
+
+    return year;
+}

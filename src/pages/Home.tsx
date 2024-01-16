@@ -14,14 +14,16 @@ import WorksProjects from '../components/WorksProjects/Index';
 import HomeIcon from '@mui/icons-material/Home';
 import EmailIcon from '@mui/icons-material/Email';
 import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import AppleIcon from '@mui/icons-material/Apple';
 
 // imgs
 import portfolioV3img from "/images/portfoliov3.png";
 import playlistimg from "/images/playlist.png";
 import tw4img from "/images/tw4.png";
 import pokedeximg from "/images/pokedex.png";
-import portfolioV2 from "/images/portfoliov2.png"
-import todoListImg from "/images/todolist.png";
+import catologoApp from "/images/catalogoapp.png";
+import unicomunica from "/images/unicomunica.png";
 
 import awsImg from "/images/techs/Aws.png";
 import cssImg from "/images/techs/Css.png";
@@ -119,6 +121,49 @@ const data: User = {
     ],
     worksProjects: [
         {
+            id: 6,
+            name: "CatalogoApp",
+            description: "Projeto desenvolvido de forma híbrida, utilizando react native, nele você pode criar sua loja virtual, e personalizar ela para que fique profissional e a cara do seu negocio. (Projeto da @SupliuTech)",
+            technologies: ["React Native", "GraphQl", "Typescript"],
+            links: [
+                {
+                    id: 1,
+                    type: "WebSite",
+                    link: "https://web.catalogoapp.mobi",
+                    icon: <LanguageIcon sx={propsIcon2}/>
+                },
+                {
+                    id: 2,
+                    type: "Play Store",
+                    link: "https://play.google.com/store/apps/details?id=mobi.catalogoapp&hl=pt_BR&gl=US&pli=1",
+                    icon: <PlayArrowIcon sx={propsIcon2}/>
+                },
+                {
+                    id: 3,
+                    type: "App Store",
+                    link: "https://apps.apple.com/br/app/catálogo-app/id1541545374",
+                    icon: <AppleIcon sx={propsIcon2}/>
+                },
+
+            ],
+            img: catologoApp
+        },
+        {
+            id: 5,
+            name: "UniComunica",
+            description: "Portal de notícias moderno, desenvolvido em Next visando o SEO, e a qualidade do software, utilizando libs de estilos minimalistas e modernas, com o back end feito em apollo server para consumo em graphql em um banco de dados mongoDB",
+            technologies: ["Next.js", "MongoDB", "GraphQl", "Node.js"],
+            links: [
+                {
+                    id: 1,
+                    type: "WebSite",
+                    link: "https://webapp-chi-one.vercel.app",
+                    icon: <LanguageIcon sx={propsIcon2}/>
+                }
+            ],
+            img: unicomunica
+        },
+        {
             id: 1,
             name: "Portfolio V3",
             description: "Portfolio pensado e criado por mim, passando pelo figma e utilizando as tecnicas de UI e UX. E desenvolvido em React + Typescript.",
@@ -205,41 +250,6 @@ const data: User = {
             ],
             img: pokedeximg
         },
-        {
-            id: 5,
-            name: "Portfolio V2",
-            description: "Portfolio pessoal desenvolvido com base na Netflix, utilizando o designer parecido.",
-            technologies: ["React.js", "Scss"],
-            links: [
-                {
-                    id: 1,
-                    type: "GitHub",
-                    link: "https://github.com/Lucas-Jav/PortfolioLucas",
-                    icon: <GitHubIcon sx={propsIcon2}/>
-                }, {
-                    id: 2,
-                    type: "WebSite",
-                    link: "https://portfolio-lucas-roan.vercel.app/",
-                    icon: <LanguageIcon sx={propsIcon2}/>
-                }
-            ],
-            img: portfolioV2
-        },
-        {
-            id: 6,
-            name: "Todo List",
-            description: "Este projeto permite você criar tarefas, ver, deletar e atualizar, projeto moderno rodando em tempo real. (Ainda está sendo desenvolvido)",
-            technologies: ["Node.js", "MongoDB"],
-            links: [
-                {
-                    id: 1,
-                    type: "GitHub",
-                    link: "https://github.com/Lucas-Jav/to-do-list-express",
-                    icon: <GitHubIcon sx={propsIcon2}/>
-                }
-            ],
-            img: todoListImg
-        },
     ],
     techsAll: {
         techsUseToday: [
@@ -301,10 +311,17 @@ const data: User = {
             dateFormated: "2022 · Atualmente",
             history: [
                 {
+                    title: "Desenvolvedor Front End na Leadtax",
+                    description: "Desenvolvimento de sistemas Front End e UI & UX designer.",
+                    dateFormated: "Janeiro/2024 · Atualmente",
+                    date: new Date("2024-01-15")
+                },
+                {
                     title: "Desenvolvedor React Trainee na Supliu",
                     description: "Desenvolvimento de sistemas em React e React Native, criando novas features e ferramentas.",
-                    dateFormated: "Agosto/2023 · Atualmente",
-                    date: new Date("2023-08-22")
+                    dateFormated: "Agosto/2023 · Janeiro/2024",
+                    date: new Date("2023-08-22"),
+                    date_end: new Date("2024-01-15")
                 },
                 {
                     title: "Desenvolvedor Front-End no Patos Hoje",
