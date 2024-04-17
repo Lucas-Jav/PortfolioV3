@@ -19,7 +19,7 @@ import AppleIcon from '@mui/icons-material/Apple';
 
 // imgs
 import portfolioV3img from "/images/portfoliov3.png";
-import playlistimg from "/images/playlist.png";
+import puaimg from "/images/pua.png";
 import tw4img from "/images/tw4.png";
 import pokedeximg from "/images/pokedex.png";
 import catologoApp from "/images/catalogoapp.png";
@@ -39,6 +39,7 @@ import sassImg from "/images/techs/Sass.png";
 import typescriptImg from "/images/techs/Typescript.png";
 import vueImg from "/images/techs/Vue.png";
 import reactNativeImg from "/images/techs/ReactNative.png"
+import mysqlLogo from "/images/techs/MySQL.png"
 import Techs from '../components/Techs/Index';
 import Contact from '../components/Contact/Index';
 import { LinkedIn, WhatsApp } from '@mui/icons-material';
@@ -121,6 +122,21 @@ const data: User = {
     ],
     worksProjects: [
         {
+            id: 2,
+            name: "Plante uma Árvore",
+            description: "Plante uma árvore e contribua com a natureza. É rápido e fácil! Com apenas alguns cliques, você já estará ajudando o meio ambiente.",
+            technologies: ["React JS", "Css"],
+            links: [
+                {
+                    id: 1,
+                    type: "WebSite",
+                    link: "https://planteumaarvoreoficial.com.br",
+                    icon: <LanguageIcon sx={propsIcon2}/>
+                }
+            ],
+            img: puaimg
+        },
+        {
             id: 6,
             name: "CatalogoApp",
             description: "Projeto desenvolvido de forma híbrida, utilizando react native, nele você pode criar sua loja virtual, e personalizar ela para que fique profissional e a cara do seu negocio. (Projeto da @SupliuTech)",
@@ -190,26 +206,6 @@ const data: User = {
             img: portfolioV3img
         },
         {
-            id: 2,
-            name: "Playlist",
-            description: "Albuns e faixas dinamicos do grupo Tião carreiro e Pardinho, projeto para vaga de React Trainee da empresa Supliu!",
-            technologies: ["React JS", "Css"],
-            links: [
-                {
-                    id: 1,
-                    type: "GitHub",
-                    link: "https://github.com/Lucas-Jav/playlist",
-                    icon: <GitHubIcon sx={propsIcon2}/>
-                }, {
-                    id: 2,
-                    type: "WebSite",
-                    link: "https://playlist-sandy.vercel.app/",
-                    icon: <LanguageIcon sx={propsIcon2}/>
-                }
-            ],
-            img: playlistimg
-        },
-        {
             id: 3,
             name: "TW4 Tcc",
             description: "Este é um projeto no qual eu fiquei responsável em desenvolver para o meu grupo do tcc da Escola da Nuvem, do curso Fundamentos AWS Cloud.",
@@ -254,19 +250,20 @@ const data: User = {
     techsAll: {
         techsUseToday: [
             reactImg,
-            reactNativeImg,
+            awsImg,
             typescriptImg,
             jsImg,
             cssImg,
             figmaImg,
             gitImg,
-            githubImg
+            githubImg,
+            mysqlLogo
         ],
         techsUtils: [
             nodeImg,
             sassImg,
+            reactNativeImg,
             mongodbImg,
-            awsImg,
             vueImg,
             htmlImg
         ]
@@ -312,7 +309,7 @@ const data: User = {
             history: [
                 {
                     title: "Desenvolvedor Front End na Leadtax",
-                    description: "Desenvolvimento de sistemas Front End e UI & UX designer.",
+                    description: "Desenvolvimento de sistemas Front End e UI & UX designer, arquitetura em Cloud na AWS.",
                     dateFormated: "Janeiro/2024 · Atualmente",
                     date: new Date("2024-01-15")
                 },
@@ -336,17 +333,23 @@ const data: User = {
             dateFormated: "2021 · Atualmente",
             history: [
                 {
+                    title: "Desenvolvedor Full Stack",
+                    description: "Aprender do zero a programar ao avançado, novas técnicas, tecnologias, bibliotecas. Com uma metodologia de ensino voltada para o que as empresas precisam",
+                    dateFormated: "Março/2022 · Atualmente",
+                    date: new Date("2022-03-03")
+                },
+                {
+                    title: "Ciência da Computação",
+                    description: "Conhecer todas as áreas da computação, aprender novas tecnologias, aprender novos conceitos.",
+                    dateFormated: "Janeiro/2023 · Atualmente",
+                    date: new Date("2023-01-12")
+                },
+                {
                     title: "Fundamentos AWS Cloud ",
                     description: "O AWS Fundamentos da Escola da Nuvem é um programa rápido e de curta duração, com o principal objetivo de introduzir os principais conceitos e serviços da nuvem AWS.",
                     dateFormated: "Abril/2023 · Julho/2023",
                     date: new Date("2023-04-01"),
                     date_end: new Date("2023-07-18")
-                },
-                {
-                    title: "Desenvolvedor Full Stack",
-                    description: "Aprender do zero a programar ao avançado, novas técnicas, tecnologias, bibliotecas. Com uma metodologia de ensino voltada para o que as empresas precisam",
-                    dateFormated: "Março/2022 · Atualmente",
-                    date: new Date("2022-03-03")
                 },
             ]
         },
