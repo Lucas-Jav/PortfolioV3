@@ -69,8 +69,9 @@ const data: User = {
     birthday: new Date('2004-03-24'),
     email: "lucasrazebra@gmail.com",
     works: [
-        "Desenvolvedor Front End...",
-        "Designer UI & UX..."
+        "Desenvolvedor Full Stack...",
+        "Designer UI & UX...",
+        "Engenheiro de DevOps..."
     ],
     location: {
         state: "MG",
@@ -108,7 +109,7 @@ const data: User = {
         {
             id: 1,
             specialize: "Desenvolvedor",
-            variante: "Front-end"
+            variante: "Full-Stack"
         },
         {
             id: 2,
