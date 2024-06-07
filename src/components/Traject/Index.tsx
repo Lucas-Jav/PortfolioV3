@@ -30,6 +30,8 @@ function Traject({
                         justifyContent: "center",
                     }}>
                     <Typography
+                    data-aos="fade-up"
+                    data-aos-duration={`1100`}
                         sx={{
                             color: "#fff",
                             fontFamily: "Montserrat",
@@ -46,8 +48,10 @@ function Traject({
                         display="flex"
                         flexDirection={media1400 ? "column" : "row"}
                         justifyContent="space-around">
-                        {allHistory.map((history) => (
+                        {allHistory.map((history, index) => (
                             <Box
+                            data-aos="fade-up"
+                            data-aos-duration={`${index * 2 + 10}00`}
                                 key={history.name}>
                                 <Typography
                                     sx={{
@@ -79,8 +83,10 @@ function Traject({
                                     sx={{overflowX: media1200 ? "scroll" : ""}}
                                     whiteSpace="nowrap"
                                     >
-                                    {history.history.map((obj) => (
+                                    {history.history.map((obj, index2) => (
                                         <Box
+                                        data-aos="fade-up"
+                                        data-aos-duration={`${index2 * 2 + 10}00`}
                                             display={media1200 ? "inline-flex" : "flex"}
                                             flexDirection="column"
                                             justifyContent="space-between"

@@ -18,8 +18,10 @@ function LeftBlock({
     const currentYear = calcYears(birthday, new Date())
     return (
         <Box 
+        data-aos="fade-up"
+        data-aos-duration="2000"
             className="blockAbout">
-                <Navicon 
+                <Navicon  
                     subTitle='sobre-mim'/>
                 <Typography
                     className='montserratBold'

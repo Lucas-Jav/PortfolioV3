@@ -26,7 +26,10 @@ function Presentation({
                 justifyContent: "center"
             }}>
 
-                <Box mb={25}>
+                <Box 
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                mb={25}>
                     <Box
                         sx={{
                             width: "100%",

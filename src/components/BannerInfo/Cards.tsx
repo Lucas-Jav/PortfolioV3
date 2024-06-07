@@ -21,13 +21,15 @@ function Cards({
                 flexDirection: mediaQuery1040 ? "column" : "row",
                 gap: mediaQuery1040 ? "50px" : "0"
             }}>   
-            {specializes.map((specializeData) => {
+            {specializes.map((specializeData, index) => {
                 const { id, icon, specialize, time, variante } = specializeData;
                 const currentYear = new Date().getFullYear();
                 const startYear = time.getFullYear();
 
                 return (
                     <Box
+                    data-aos="fade-up"
+                    data-aos-duration={`1${index * 2}00`}
                         sx={{
                             width: "300px",
                             height:  "230px",

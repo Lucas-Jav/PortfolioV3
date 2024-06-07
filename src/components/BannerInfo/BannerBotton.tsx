@@ -13,7 +13,8 @@ function BannerBottonInfo({
     return (
         <Box
             mt={6}
-            
+            data-aos="fade-up"
+            data-aos-duration="1800"
             sx={{
                 bgcolor: "#EE70701A",
                 p: "50px 36px",

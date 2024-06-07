@@ -1,16 +1,20 @@
-import { Box, Grid, Typography } from '@mui/material';
+import { Box, Grid, Typography, useMediaQuery } from '@mui/material';
 import { Projects } from '../../types';
 
 interface CardsProjectsProps {
     worksProject: Projects;
+    index: number;
 }
 
 function CardsProjects({
-    worksProject
+    worksProject,
+    index
 }: CardsProjectsProps) {
-    
+    const media425 = useMediaQuery("(max-width: 425px)");
     return (
         <Grid 
+        data-aos="fade-up"
+        data-aos-duration={`${index * 3 + 10}00`}
             item>
                 <Box
                     className="cardsProjects"
@@ -83,7 +87,7 @@ function CardsProjects({
                                 </Box>
                             </Box>
                             <Box
-                            height="13.5rem"
+                            height={!media425 ? "13.5rem" : "auto"}
                             width="100%"
                             borderRadius="0.5rem"
                             position="relative">
@@ -92,7 +96,8 @@ function CardsProjects({
                                     width: "100%",
                                     height: "100%",
                                     borderRadius: "0.5rem",
-                                    objectFit: "cover"
+                                    objectFit: "cover",
+                                    overflow: "hidden"
                                 }}
                                 srcSet={worksProject.img}
                                 alt={worksProject.name}

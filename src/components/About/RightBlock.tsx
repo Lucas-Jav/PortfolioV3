@@ -11,6 +11,8 @@ function RightBlock({
 }: RightBlockProps) {
     return (
         <Box
+        data-aos="fade-up"
+        data-aos-duration="2500"
             className="blockAbout"
             sx={{
                 gap: "30px",

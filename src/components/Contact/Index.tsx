@@ -104,6 +104,8 @@ ${data.text}
                 mb: "150px"
             }}>
                 <Box 
+                data-aos="fade-up"
+                data-aos-duration={`1100`}
                     mt={"100px"}
                     mb={6}
                     className="blockAbout">
@@ -123,6 +125,8 @@ ${data.text}
                             flexDirection: mediaQuery768 ? "column-reverse" : "row"
                         }}>
                         <Box
+                        data-aos="fade-up"
+                        data-aos-duration={`1300`}
                         sx={{
                             display: "flex",
                             flexDirection: "column",
@@ -308,7 +312,11 @@ ${data.text}
                                 </Snackbar>
                             )}
                         </Box>
-                        <Box sx={{
+
+                        <Box 
+                        data-aos="fade-up"
+                        data-aos-duration={`1700`}
+                        sx={{
                             p: 4,
                             border: "2px solid rgba(0, 0, 0, 0.23)",
                             borderRadius: "1rem",

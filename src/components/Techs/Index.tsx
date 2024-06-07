@@ -28,6 +28,8 @@ function Techs({
                         justifyContent: "center"
                     }}>
                     <Typography
+                    data-aos="fade-up"
+                    data-aos-duration={`1000`}
                         sx={{
                             color: "#fff",
                             fontFamily: "Montserrat",
@@ -39,6 +41,8 @@ function Techs({
                     </Typography>
 
                     <Typography
+                    data-aos="fade-up"
+                    data-aos-duration={`1100`}
                         sx={{
                             color: "rgba(255, 255, 255, 0.50)",
                             fontFamily: "Raleway",
@@ -58,18 +62,23 @@ function Techs({
                             mt: 5,
                             justifyContent: "center",
                         }}>
-                        {techsAll.techsUseToday.map((link) => (
+                        {techsAll.techsUseToday.map((link, index) => (
                             <img 
+                                data-aos="fade-up"
+                                data-aos-duration={`${index * 2 + 10}00`}
                                 width={64}
                                 height={64}
                                 src={link} 
                                 alt={link} 
+                                style={{ objectFit: "contain" }} 
                                 loading="lazy" 
                                 key={link}/>
                         ))}
                     </Box>
 
                     <Typography
+                    data-aos="fade-up"
+                    data-aos-duration={`1100`}
                         sx={{
                             color: "rgba(255, 255, 255, 0.50)",
                             fontFamily: "Raleway",
@@ -89,12 +98,15 @@ function Techs({
                             flexWrap: "wrap",
                             mt: 3
                         }}>
-                        {techsAll.techsUtils.map((link) => (
+                        {techsAll.techsUtils.map((link, index) => (
                             <img 
+                                data-aos="fade-up"
+                                data-aos-duration={`${index * 2 + 10}00`}
                                 width={64}
                                 height={64}
                                 src={link} 
                                 alt={link} 
+                                style={{ objectFit: "contain" }} 
                                 loading="lazy" 
                                 key={link}/>
                         ))}

@@ -21,9 +21,11 @@ function WorksProjects({
                 p: "0px 260px",
             }}>
                 <Box 
-                    mt={"100px"}
-                    mb={6}
-                    className="blockAbout">
+                data-aos="fade-up"
+                data-aos-duration="1500"
+                mt={"100px"}
+                mb={6}
+                className="blockAbout">
                         <Navicon 
                             subTitle='trabalhos'/>
                         <Typography
@@ -39,10 +41,13 @@ function WorksProjects({
                     container 
                     spacing={{ xs: 2, md: 4 }} 
                     columns={{ xs: 4, sm: 8, md: 12 }}>
-                        {worksProjects.map((project) => (
-                            <CardsProjects worksProject={project} key={project.id}/>
+                        {worksProjects.map((project, index) => (
+                            <CardsProjects index={index} worksProject={project} key={project.id}/>
                         ))}
-                        <Grid container mt={5} mb={5} className="cardsProjects">
+                        <Grid
+                        data-aos="fade-up"
+                        data-aos-duration={`1500`} 
+                        container mt={5} mb={5} className="cardsProjects">
                             <a href="https://github.com/Lucas-Jav?tab=repositories"
                                 target='_blank'
                                 style={{

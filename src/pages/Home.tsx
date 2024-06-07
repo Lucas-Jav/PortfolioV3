@@ -21,10 +21,11 @@ import AppleIcon from '@mui/icons-material/Apple';
 import portfolioV3img from "/images/portfoliov3.png";
 import puaimg from "/images/pua.png";
 import tw4img from "/images/tw4.png";
-import pokedeximg from "/images/pokedex.png";
+import ultracar from "/images/ultracar.png";
 import catologoApp from "/images/catalogoapp.png";
 import unicomunica from "/images/unicomunica.png";
 
+import phpImg from "/images/techs/php.png";
 import awsImg from "/images/techs/Aws.png";
 import cssImg from "/images/techs/Css.png";
 import figmaImg from "/images/techs/Figma.png";
@@ -121,6 +122,21 @@ const data: User = {
         },
     ],
     worksProjects: [
+        {
+            id: 4,
+            name: "UltraCar",
+            description: "Landing page feita para a futura empresa de aplicativo de corridas ultra car, para cidade de Patos de Minas.",
+            technologies: ["React", "Typescript", "Material UI"],
+            links: [
+                {
+                    id: 2,
+                    type: "WebSite",
+                    link: "https://ultracarr.com.br",
+                    icon: <LanguageIcon sx={propsIcon2}/>
+                }
+            ],
+            img: ultracar
+        },
         {
             id: 2,
             name: "Plante uma Árvore",
@@ -226,40 +242,21 @@ const data: User = {
             ],
             img: tw4img
         },
-        {
-            id: 4,
-            name: "Pokedex",
-            description: "Pokedex desenvolvida utilizando a API pokeApiV2, neste projeto você pode buscar por pokemons, e ver suas informações!",
-            technologies: ["Html", "Scss", "JavaScript"],
-            links: [
-                {
-                    id: 1,
-                    type: "GitHub",
-                    link: "https://github.com/Lucas-Jav/Pokedex-API",
-                    icon: <GitHubIcon sx={propsIcon2}/>
-                }, {
-                    id: 2,
-                    type: "WebSite",
-                    link: "https://pokedexweb23.netlify.app/",
-                    icon: <LanguageIcon sx={propsIcon2}/>
-                }
-            ],
-            img: pokedeximg
-        },
     ],
     techsAll: {
         techsUseToday: [
             reactImg,
+            phpImg,
             awsImg,
             typescriptImg,
             jsImg,
             cssImg,
             figmaImg,
-            gitImg,
-            githubImg,
             mysqlLogo
         ],
         techsUtils: [
+            githubImg,
+            gitImg,
             nodeImg,
             sassImg,
             reactNativeImg,
@@ -308,8 +305,8 @@ const data: User = {
             dateFormated: "2022 · Atualmente",
             history: [
                 {
-                    title: "Desenvolvedor Front End na Leadtax",
-                    description: "Desenvolvimento de sistemas Front End e UI & UX designer, arquitetura em Cloud na AWS.",
+                    title: "Desenvolvedor Full Stack na Leadtax",
+                    description: "Desenvolvimento de sistemas front end em react typescript, back end utilizando Laravel PHP e UI & UX designer, arquitetura em Cloud na AWS.",
                     dateFormated: "Janeiro/2024 · Atualmente",
                     date: new Date("2024-01-15")
                 },
@@ -333,16 +330,17 @@ const data: User = {
             dateFormated: "2021 · Atualmente",
             history: [
                 {
-                    title: "Desenvolvedor Full Stack",
-                    description: "Aprender do zero a programar ao avançado, novas técnicas, tecnologias, bibliotecas. Com uma metodologia de ensino voltada para o que as empresas precisam",
-                    dateFormated: "Março/2022 · Atualmente",
-                    date: new Date("2022-03-03")
-                },
-                {
                     title: "Ciência da Computação",
                     description: "Conhecer todas as áreas da computação, aprender novas tecnologias, aprender novos conceitos.",
                     dateFormated: "Janeiro/2023 · Atualmente",
                     date: new Date("2023-01-12")
+                },
+                {
+                    title: "Desenvolvedor Full Stack",
+                    description: "Aprender do zero a programar ao avançado, novas técnicas, tecnologias, bibliotecas. Com uma metodologia de ensino voltada para o que as empresas precisam",
+                    dateFormated: "Março/2022 · Maio/2024",
+                    date: new Date("2022-03-03"),
+                    date_end: new Date("2024-05-10")
                 },
                 {
                     title: "Fundamentos AWS Cloud ",
