@@ -9,7 +9,6 @@ import BrushIcon from '@mui/icons-material/Brush';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { User } from '../types';
 import LanguageIcon from '@mui/icons-material/Language';
-import ArchitectureIcon from '@mui/icons-material/Architecture';
 import WorksProjects from '../components/WorksProjects/Index';
 import HomeIcon from '@mui/icons-material/Home';
 import EmailIcon from '@mui/icons-material/Email';
@@ -18,9 +17,9 @@ import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import AppleIcon from '@mui/icons-material/Apple';
 
 // imgs
-import portfolioV3img from "/images/portfoliov3.png";
+import portalleadtaxImg from "/images/portalleadtax.png";
 import puaimg from "/images/pua.png";
-import tw4img from "/images/tw4.png";
+import beecareImg from "/images/beecare.png";
 import ultracar from "/images/ultracar.png";
 import catologoApp from "/images/catalogoapp.png";
 import unicomunica from "/images/unicomunica.png";
@@ -124,6 +123,36 @@ const data: User = {
     ],
     worksProjects: [
         {
+            id: 1,
+            name: "Portal Leadtax",
+            description: "Portal de automações financeiras e gestão de clientes.",
+            technologies: ["React JS", "Typescript", "Figma", "Laravel", "AWS"],
+            links: [
+                {
+                    id: 1,
+                    type: "WebSite",
+                    link: "https://portal.lead.tax",
+                    icon: <LanguageIcon sx={propsIcon2}/>
+                }
+            ],
+            img: portalleadtaxImg
+        },
+        {
+            id: 3,
+            name: "Beecare",
+            description: "Este é um projeto no qual eu fiquei responsável em desenvolver soluções completa para integração entre prestadores e operadoras de saúde.",
+            technologies: ["WebScraping", "RPA's"],
+            links: [
+                {
+                    id: 1,
+                    type: "WebSite",
+                    link: "https://beecare.bionexo.com",
+                    icon: <LanguageIcon sx={propsIcon2}/>
+                }
+            ],
+            img: beecareImg
+        },
+        {
             id: 4,
             name: "UltraCar",
             description: "Landing page feita para a futura empresa de aplicativo de corridas ultra car, para cidade de Patos de Minas.",
@@ -142,7 +171,7 @@ const data: User = {
             id: 2,
             name: "Plante uma Árvore",
             description: "Plante uma árvore e contribua com a natureza. É rápido e fácil! Com apenas alguns cliques, você já estará ajudando o meio ambiente.",
-            technologies: ["React JS", "Css"],
+            technologies: ["React JS", "Css", "Typescript"],
             links: [
                 {
                     id: 1,
@@ -195,54 +224,7 @@ const data: User = {
                 }
             ],
             img: unicomunica
-        },
-        {
-            id: 1,
-            name: "Portfolio V3",
-            description: "Portfolio pensado e criado por mim, passando pelo figma e utilizando as tecnicas de UI e UX. E desenvolvido em React + Typescript.",
-            technologies: ["React JS", "Typescript", "Figma", "Node.js"],
-            links: [
-                {
-                    id: 1,
-                    type: "GitHub",
-                    link: "https://github.com/Lucas-Jav/PortfolioV3",
-                    icon: <GitHubIcon sx={propsIcon2}/>
-                }, {
-                    id: 2,
-                    type: "WebSite",
-                    link: "https://lucas-jav.github.io/PortfolioV3/",
-                    icon: <LanguageIcon sx={propsIcon2}/>
-                },
-                {
-                    id: 3,
-                    type: "Figma",
-                    link: "https://www.figma.com/community/file/1290820055556325949/portfolio",
-                    icon: <ArchitectureIcon sx={propsIcon2}/>
-                }
-            ],
-            img: portfolioV3img
-        },
-        {
-            id: 3,
-            name: "TW4 Tcc",
-            description: "Este é um projeto no qual eu fiquei responsável em desenvolver para o meu grupo do tcc da Escola da Nuvem, do curso Fundamentos AWS Cloud.",
-            technologies: ["Html", "Css", "JavaScript"],
-            links: [
-                {
-                    id: 1,
-                    type: "GitHub",
-                    link: "https://github.com/Lucas-Jav/tccgp4",
-                    icon: <GitHubIcon sx={propsIcon2}/>
-                }, 
-                {
-                    id: 2,
-                    type: "WebSite",
-                    link: "https://tccgp4.vercel.app/",
-                    icon: <LanguageIcon sx={propsIcon2}/>
-                }
-            ],
-            img: tw4img
-        },
+        }
     ],
     techsAll: {
         techsUseToday: [
