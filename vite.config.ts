@@ -5,7 +5,7 @@ env.config();
 
 export default defineConfig({
   plugins: [react()],
-  base: "/PortfolioV3",
+  base: "/",
   server: {
     open: true
   },
