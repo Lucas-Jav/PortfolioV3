@@ -4,6 +4,8 @@ import Navicon from '../NavIcon/Index';
 import { Projects } from '../../types';
 import CardsProjects from './CardsProjects';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
+import { useLanguage } from '../../i18n/LanguageContext';
+import { translations } from '../../i18n/translations';
 
 interface WorksProjectsProps {
     worksProjects: Projects[]
@@ -12,6 +14,7 @@ interface WorksProjectsProps {
 function WorksProjects({
     worksProjects
 }: WorksProjectsProps) {
+    const { language } = useLanguage();
 
     return (
         <Box
@@ -27,11 +30,11 @@ function WorksProjects({
                 mb={6}
                 className="blockAbout">
                         <Navicon 
-                            subTitle='trabalhos'/>
+                            subTitle={translations[language]['worksProjects']['projects']}/>
                         <Typography
                             className='montserratBold'
                             variant='h3'>
-                                Trabalhos e projetos
+                                {translations[language]['worksProjects']['worksAndProjects']}
                         </Typography>
                 </Box>
 
@@ -62,7 +65,7 @@ function WorksProjects({
                                         alignItems: "center",
                                         fontSize: "1rem"
                                     }}>
-                                    Ver mais projetos no github
+                                    {translations[language]['worksProjects']['seeMoreProjectsOnGithub']}
                                     <ArrowRightAltIcon />
                                 </Typography>
                             </a>

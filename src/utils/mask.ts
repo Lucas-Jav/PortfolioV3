@@ -1,4 +1,6 @@
-export const calcularDiferencaEntreDatas = (data1: Date, data2: Date = new Date()) => {
+import { translations } from "../i18n/translations";
+
+export const calcularDiferencaEntreDatas = (data1: Date, data2: Date = new Date(), language: 'pt' | 'en') => {
     data1 = data1 instanceof Date ? data1 : new Date(data1);
     data2 = data2 instanceof Date ? data2 : new Date(data2);
 
@@ -10,12 +12,12 @@ export const calcularDiferencaEntreDatas = (data1: Date, data2: Date = new Date(
     const anos = Math.floor(diferencaEmMilissegundos / milissegundosPorAno);
     const meses = Math.floor((diferencaEmMilissegundos % milissegundosPorAno) / milissegundosPorMes);
 
-    const anosStr = anos === 1 ? 'ano' : 'anos';
-    const mesesStr = meses === 1 ? 'mês' : 'meses';
+    const anosStr = anos === 1 ? translations[language]['others']['year'] : translations[language]['others']['years'];
+    const mesesStr = meses === 1 ? translations[language]['others']['month'] : translations[language]['others']['months'];
 
     if (anos === 0) {
         if (meses === 0) {
-            return "Menos de um mês";
+            return translations[language]['others']['minusThanAMonth'];
         } else if (meses === 1) {
             return `1 ${mesesStr}`;
         } else {
@@ -23,11 +25,11 @@ export const calcularDiferencaEntreDatas = (data1: Date, data2: Date = new Date(
         }
         } else if (anos === 1) {
         if (meses === 0) {
-            return "1 ano";
+            return `1 ${translations[language]['others']['year']}`;
         } else if (meses === 1) {
-            return "1 ano e 1 mês";
+            return `1 ${translations[language]['others']['year']} e 1 ${translations[language]['others']['month']}`;
         } else {
-            return `1 ano e ${meses} ${mesesStr}`;
+            return `1 ${translations[language]['others']['year']} e ${meses} ${mesesStr}`;
         }
         } else {
         if (meses === 0) {

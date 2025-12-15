@@ -1,6 +1,8 @@
 import { Typography, useMediaQuery } from '@mui/material';
 import Box from '@mui/material/Box';
 import { Specializes } from '../../types';
+import { useLanguage } from '../../i18n/LanguageContext';
+import { translations } from '../../i18n/translations';
 
 interface CardsProps {
     specializes: Specializes[];
@@ -10,6 +12,8 @@ function Cards({
     specializes
 }:CardsProps) {
     const mediaQuery1040 = useMediaQuery('(max-width: 1040px)');
+
+    const { language } = useLanguage();
     return (
         <Box
             sx={{
@@ -55,8 +59,8 @@ function Cards({
                                     letterSpacing: "0.04rem"
                                 }}>
                                 {String(currentYear - startYear)}
-                                {(currentYear - startYear) < 2 ? " ano": " anos"}
-                                {variante === "1" ? " como": " de"}
+                                {(currentYear - startYear) < 2 ? ` ${translations[language]['others']['year']}`: ` ${translations[language]['others']['years']}`}
+                                {variante === "1" ? ` ${translations[language]['others']['as']}` : ` ${translations[language]['others']['as']}`}
                             </Typography>
                             <Typography 
                                 color="#fff"

@@ -3,6 +3,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Home from './pages/Home';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { LanguageProvider } from './i18n/LanguageContext';
 
 export default function App() {
   useEffect(() => {
@@ -31,8 +32,10 @@ export default function App() {
   );
 
   return (
-    <ThemeProvider theme={theme}>
-      <Home />
-    </ThemeProvider>
+    <LanguageProvider>
+      <ThemeProvider theme={theme}>
+        <Home />
+      </ThemeProvider>
+    </LanguageProvider>
   );
 }

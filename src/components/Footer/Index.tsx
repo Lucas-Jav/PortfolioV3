@@ -1,7 +1,11 @@
 import { Box, Typography, useMediaQuery } from "@mui/material";
+import { useLanguage } from "../../i18n/LanguageContext";
+import { translations } from "../../i18n/translations";
 
 function Footer() {
     const media550 = useMediaQuery("(max-width: 550px)");
+
+    const { language } = useLanguage();
 
     const scrollToTop = () => {
         window.scrollTo({
@@ -26,7 +30,7 @@ function Footer() {
             <Typography
                 textAlign="center">
                 &copy;
-                Desenvolvido por Lucas Oliveira · {String(new Date().getFullYear())}
+                {translations[language]['footer']['developedBy']} · {String(new Date().getFullYear())}
             </Typography>
 
             
@@ -35,7 +39,7 @@ function Footer() {
                     cursor: "pointer"
                 }}
                 onClick={scrollToTop}>
-                Voltar para o topo
+                {translations[language]['footer']['backToTop']}
             </Typography>
             
         </Box>

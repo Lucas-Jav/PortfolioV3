@@ -1,5 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import { User } from "../../types";
+import { useLanguage } from "../../i18n/LanguageContext";
+import { translations } from "../../i18n/translations";
 
 interface TechsProps {
     techsAll: User["techsAll"];
@@ -9,9 +11,11 @@ function Techs({
     techsAll
 }: TechsProps) {
     
+    const { language } = useLanguage();
+
     return (
         <Box
-            id="traject"
+            id="trajectory"
             sx={{
                 bgcolor: "#121212",
                 p: "100px 50px",
@@ -37,7 +41,7 @@ function Techs({
                             fontWeight: "700",
                             textAlign: "center"
                         }}>
-                        Tecnologias e habilidades
+                        {translations[language]['trajectory']['technologiesSkills']}
                     </Typography>
 
                     <Typography
@@ -51,7 +55,7 @@ function Techs({
                             textAlign: "center",
                             mt: 5
                         }}>
-                        Techs que uso no dia a dia
+                        {translations[language]['trajectory']['techsIDailyUse']}
                     </Typography>
 
                     <Box 
@@ -87,7 +91,7 @@ function Techs({
                             textAlign: "center",
                             mt: 6
                         }}>
-                        Outras techs com que já realizei projetos
+                        {translations[language]['trajectory']['otherTechs']}
                     </Typography>
 
                     <Box 

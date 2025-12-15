@@ -7,6 +7,8 @@ import CircularProgress from '@mui/material/CircularProgress';
 import axios from "axios";
 import { useState } from "react";
 import { ContactInfo, User } from "../../types";
+import { useLanguage } from "../../i18n/LanguageContext";
+import { translations } from "../../i18n/translations";
 
 
 type DataMail = {
@@ -39,6 +41,8 @@ function Contact({
     const [error, setError] = useState("");
     const [success, setSuccess] = useState("");
     const [openSnackbar, setOpenSnackbar] = useState(false);
+
+    const { language } = useLanguage();
 
     const methods = useForm({
         resolver: yupResolver(mailOptions),
@@ -110,11 +114,11 @@ ${data.text}
                     mb={6}
                     className="blockAbout">
                         <Navicon 
-                            subTitle='Contatos'/>
+                            subTitle={translations[language]['contact']['contacts']}/>
                         <Typography
                             className='montserratBold'
                             variant='h3'>
-                                Vamos conversar!
+                                {translations[language]['contact']['letsTalk']}
                         </Typography>
                 </Box>
                 <FormProvider {...methods}>
@@ -138,7 +142,7 @@ ${data.text}
                                 fontWeight={500}
                                 className='montserratBold'
                                 >
-                                Contate-me por aqui
+                                {translations[language]['contact']['contactMeHere']}
                             </Typography>
 
                             <Box 
@@ -152,8 +156,8 @@ ${data.text}
                                             <TextField
                                                 name="name"
                                                 variant="outlined"
-                                                label="Nome"
-                                                placeholder="Escreva seu nome"
+                                                label={translations[language]['contact']['name']}
+                                                placeholder={translations[language]['contact']['writeYourName']}
                                                 style={{
                                                     width: "49%"
                                                 }}
@@ -179,8 +183,8 @@ ${data.text}
                                             <TextField
                                                 name="lastName"
                                                 variant="outlined"
-                                                label="Sobrenome"
-                                                placeholder="Escreva seu sobrenome"
+                                                label={translations[language]['contact']['lastName']}
+                                                placeholder={translations[language]['contact']['writeYourLastName']}
                                                 style={{
                                                     width: "49%"
                                                 }}
@@ -207,7 +211,7 @@ ${data.text}
                                         <TextField
                                             name="email"
                                             variant="outlined"
-                                            label="Email"
+                                            label={translations[language]['contact']['email']}
                                             placeholder="ex: mangoman@email.com"
                                             style={{
                                                 width: "100%"
@@ -234,8 +238,8 @@ ${data.text}
                                         <TextField
                                             name="subject"
                                             variant="outlined"
-                                            label="Assunto"
-                                            placeholder="ex: Bora fazer aquele projeto!"
+                                            label={translations[language]['contact']['subject']}
+                                            placeholder={'ex: Bora fazer aquele projeto!'}
                                             style={{
                                                 width: "100%"
                                             }}
@@ -264,8 +268,8 @@ ${data.text}
                                             rows={5}
                                             name="text"
                                             variant="outlined"
-                                            label="Mensagem"
-                                            placeholder="Escreva sua mensagem"
+                                            label={translations[language]['contact']['message']}
+                                            placeholder={translations[language]['contact']['writeYourMessage']}
                                             style={{
                                                 width: '100%',
                                                 minHeight: '150px',
@@ -297,7 +301,7 @@ ${data.text}
                                     </Box>
                                 ): (
                                     <>
-                                        Enviar
+                                        {translations[language]['contact']['send']}
                                     </>
                                 )}
                             </Button>
@@ -327,12 +331,10 @@ ${data.text}
                         }}>
                             <Box>
                                 <Typography fontFamily="Montserrat" fontWeight={600} fontSize="1.1rem">
-                                    Informações de contato
+                                    {translations[language]['contact']['contactInformation']}
                                 </Typography>
                                 <Typography fontSize=".9rem" mt={2} color="#54595F">
-                                    Se você apreciou o meu trabalho e está buscando um profissional comprometido e apaixonado para colaborar em projetos inovadores, 
-                                    estou à disposição para discutir como posso contribuir para o seu próximo desafio. Com anos de experiência no desenvolvimento de 
-                                    soluções criativas e eficazes, estou pronto para ajudá-lo a atingir seus objetivos.
+                                    {translations[language]['contact']['contactInformationText']}
                                 </Typography>
                             </Box>
                             <Box>

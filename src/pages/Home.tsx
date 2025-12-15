@@ -31,7 +31,7 @@ import figmaImg from "/images/techs/Figma.png";
 import gitImg from "/images/techs/Git.png";
 import githubImg from "/images/techs/Github.png";
 import htmlImg from "/images/techs/Html.png";
-import jsImg from  "/images/techs/Javascript.png";
+import jsImg from "/images/techs/Javascript.png";
 import mongodbImg from "/images/techs/MongoDb.png";
 import nodeImg from "/images/techs/Nodejs.png";
 import reactImg from "/images/techs/React.png";
@@ -48,6 +48,8 @@ import Footer from '../components/Footer/Index';
 import Header from '../components/Header';
 import { useInView } from 'react-intersection-observer';
 import { useEffect, useState } from 'react';
+import { useLanguage } from '../i18n/LanguageContext';
+import { translations } from '../i18n/translations';
 
 
 const propsIcon = {
@@ -62,296 +64,287 @@ const propsIcon2 = {
     width: "1.25rem"
 }
 
-const data: User = {
-    name: "Lucas Henrique Oliveira de Amorim",
-    username: 'Lucas Oliveira',
-    birthday: new Date('2004-03-24'),
-    email: "lucasrazebra@gmail.com",
-    works: [
-        "Desenvolvedor Full Stack...",
-        "Designer UI & UX...",
-        "Engenheiro de DevOps..."
-    ],
-    location: {
-        state: "MG",
-        country: "Brasil",
-    },
-    descriptions: [`Olá! Me chamo Lucas Oliveira, um entusiasta do desenvolvimento Front-End, 
-    apaixonado por transformar ideias em experiências digitais cativantes.`,
-    `Estou comprometido em criar soluções web inovadoras e acessíveis, 
-    transformando visões em realidade digital. Se você está procurando por um desenvolvedor Front-End dedicado, 
-    versátil e apaixonado, estou aqui para trazer sua visão à vida. Vamos colaborar e construir algo incrível juntos!`],
-    specializes: [
-        {   
-            id: 1,
-            icon: <CodeIcon sx={propsIcon}/>,
-            time: new Date('2021-09-30'),
-            specialize: "Desenvolvedor",
-            variante: "1",
-        },
-        {
-            id: 2,
-            icon: <WorkIcon sx={propsIcon}/>,
-            time: new Date('2022-09-01'),
-            specialize: "Trabalho",
-            variante: "2",
-        }, 
-        {
-            id: 3,
-            icon: <BrushIcon sx={propsIcon}/>,
-            time: new Date('2022-09-01'),
-            specialize: "Designer",
-            variante: "1",
-        }
-    ],
-    timeSpecializes: [
-        {
-            id: 1,
-            specialize: "Desenvolvedor",
-            variante: "Full-Stack"
-        },
-        {
-            id: 2,
-            specialize: "Dezenas de projetos e",
-            variante: "Experiências"
-        },
-        {
-            id: 3,
-            specialize: "Designer Freelancer e",
-            variante: "UI . UX"
-        },
-    ],
-    worksProjects: [
-        {
-            id: 1,
-            name: "Portal Leadtax",
-            description: "Portal de automações financeiras e gestão de clientes.",
-            technologies: ["React JS", "Typescript", "Figma", "Laravel", "AWS"],
-            links: [
-                {
-                    id: 1,
-                    type: "WebSite",
-                    link: "https://portal.lead.tax",
-                    icon: <LanguageIcon sx={propsIcon2}/>
-                }
-            ],
-            img: portalleadtaxImg
-        },
-        {
-            id: 3,
-            name: "Beecare",
-            description: "Este é um projeto no qual eu fiquei responsável em desenvolver soluções completa para integração entre prestadores e operadoras de saúde.",
-            technologies: ["WebScraping", "RPA's"],
-            links: [
-                {
-                    id: 1,
-                    type: "WebSite",
-                    link: "https://beecare.bionexo.com",
-                    icon: <LanguageIcon sx={propsIcon2}/>
-                }
-            ],
-            img: beecareImg
-        },
-        {
-            id: 4,
-            name: "UltraCar",
-            description: "Landing page feita para a futura empresa de aplicativo de corridas ultra car, para cidade de Patos de Minas.",
-            technologies: ["React", "Typescript", "Material UI"],
-            links: [
-                {
-                    id: 2,
-                    type: "WebSite",
-                    link: "https://ultracarr.com.br",
-                    icon: <LanguageIcon sx={propsIcon2}/>
-                }
-            ],
-            img: ultracar
-        },
-        {
-            id: 2,
-            name: "Plante uma Árvore",
-            description: "Plante uma árvore e contribua com a natureza. É rápido e fácil! Com apenas alguns cliques, você já estará ajudando o meio ambiente.",
-            technologies: ["React JS", "Css", "Typescript"],
-            links: [
-                {
-                    id: 1,
-                    type: "WebSite",
-                    link: "https://planteumaarvoreoficial.com.br",
-                    icon: <LanguageIcon sx={propsIcon2}/>
-                }
-            ],
-            img: puaimg
-        },
-        {
-            id: 6,
-            name: "CatalogoApp",
-            description: "Projeto desenvolvido de forma híbrida, utilizando react native, nele você pode criar sua loja virtual, e personalizar ela para que fique profissional e a cara do seu negocio. (Projeto da @SupliuTech)",
-            technologies: ["React Native", "GraphQl", "Typescript"],
-            links: [
-                {
-                    id: 1,
-                    type: "WebSite",
-                    link: "https://web.catalogoapp.mobi",
-                    icon: <LanguageIcon sx={propsIcon2}/>
-                },
-                {
-                    id: 2,
-                    type: "Play Store",
-                    link: "https://play.google.com/store/apps/details?id=mobi.catalogoapp&hl=pt_BR&gl=US&pli=1",
-                    icon: <PlayArrowIcon sx={propsIcon2}/>
-                },
-                {
-                    id: 3,
-                    type: "App Store",
-                    link: "https://apps.apple.com/br/app/catálogo-app/id1541545374",
-                    icon: <AppleIcon sx={propsIcon2}/>
-                },
-
-            ],
-            img: catologoApp
-        },
-        {
-            id: 5,
-            name: "UniComunica",
-            description: "Portal de notícias moderno, desenvolvido em Next visando o SEO, e a qualidade do software, utilizando libs de estilos minimalistas e modernas, com o back end feito em apollo server para consumo em graphql em um banco de dados mongoDB",
-            technologies: ["Next.js", "MongoDB", "GraphQl", "Node.js"],
-            links: [
-                {
-                    id: 1,
-                    type: "WebSite",
-                    link: "https://webapp-chi-one.vercel.app",
-                    icon: <LanguageIcon sx={propsIcon2}/>
-                }
-            ],
-            img: unicomunica
-        }
-    ],
-    techsAll: {
-        techsUseToday: [
-            reactImg,
-            phpImg,
-            awsImg,
-            typescriptImg,
-            jsImg,
-            cssImg,
-            figmaImg,
-            mysqlLogo
-        ],
-        techsUtils: [
-            githubImg,
-            gitImg,
-            nodeImg,
-            sassImg,
-            reactNativeImg,
-            mongodbImg,
-            vueImg,
-            htmlImg
-        ]
-    },
-    contactInfo: [
-        {
-            icon: <HomeIcon sx={{fontSize: 20}}/>,
-            text: "Endereço: Bairro Cristo Redentor, Rua Paraíba, nº 143"
-        },
-        {
-            icon: <EmailIcon sx={{fontSize: 20}}/>,
-            text: `Email: lucasrazebra@gmail.com`
-        },
-        {
-            icon: <PhoneAndroidIcon sx={{fontSize: 20}}/>,
-            text: "Telefone: +55 34 99212-9901"
-        }
-    ],
-    linksSocialMedias: [
-        {
-            id: 1,
-            type: "Lucas-Jav",
-            link: "https://github.com/Lucas-Jav",
-            icon: <GitHubIcon sx={{fontSize: 20}}/>
-        },
-        {
-            id: 2,
-            type: "oliveiradilucas",
-            link: "https://www.linkedin.com/in/oliveiradilucas/",
-            icon: <LinkedIn sx={{fontSize: 20}}/>
-        },
-        {
-            id: 3,
-            type: "Whatsapp",
-            link: "https://api.whatsapp.com/send/?phone=5534992129901&text=Ol%C3%A1+Lucas%2C+vim+pelo+seu+trabalho+de+desenvolvedor%21&type=phone_number&app_absent=0",
-            icon: <WhatsApp sx={{fontSize: 20}}/>
-        }
-    ],
-    professionalArea: [
-        {
-            name: "Área profisional",
-            dateFormated: "2022 · Atualmente",
-            history: [
-                {
-                    title: "Desenvolvedor Full Stack na Leadtax",
-                    description: "Desenvolvimento de sistemas front end em react typescript, back end utilizando Laravel PHP e UI & UX designer, arquitetura em Cloud na AWS.",
-                    dateFormated: "Janeiro/2024 · Atualmente",
-                    date: new Date("2024-01-15")
-                },
-                {
-                    title: "Desenvolvedor React Trainee na Supliu",
-                    description: "Desenvolvimento de sistemas em React e React Native, criando novas features e ferramentas.",
-                    dateFormated: "Agosto/2023 · Janeiro/2024",
-                    date: new Date("2023-08-22"),
-                    date_end: new Date("2024-01-15")
-                },
-                {
-                    title: "Desenvolvedor Front-End no Patos Hoje",
-                    description: "Colocar em prática, através de códigos, projetar o visual do site responsivo, otimização e correção de bugs, melhorar a usabilidade, utilizando as tecnologias: HTML, CSS, JavaScript e Vue.js.",
-                    dateFormated: "Novembro/2022 · Atualmente",
-                    date: new Date("2022-11-18")
-                },
-            ]
-        },
-        {
-            name: "Acadêmica ",
-            dateFormated: "2021 · Atualmente",
-            history: [
-                {
-                    title: "Ciência da Computação",
-                    description: "Conhecer todas as áreas da computação, aprender novas tecnologias, aprender novos conceitos.",
-                    dateFormated: "Janeiro/2023 · Atualmente",
-                    date: new Date("2023-01-12")
-                },
-                {
-                    title: "Desenvolvedor Full Stack",
-                    description: "Aprender do zero a programar ao avançado, novas técnicas, tecnologias, bibliotecas. Com uma metodologia de ensino voltada para o que as empresas precisam",
-                    dateFormated: "Março/2022 · Maio/2024",
-                    date: new Date("2022-03-03"),
-                    date_end: new Date("2024-05-10")
-                },
-                {
-                    title: "Fundamentos AWS Cloud ",
-                    description: "O AWS Fundamentos da Escola da Nuvem é um programa rápido e de curta duração, com o principal objetivo de introduzir os principais conceitos e serviços da nuvem AWS.",
-                    dateFormated: "Abril/2023 · Julho/2023",
-                    date: new Date("2023-04-01"),
-                    date_end: new Date("2023-07-18")
-                },
-            ]
-        },
-    ]
-}
-
 function Home() {
     const [ref, inView] = useInView({
         triggerOnce: true,
         rootMargin: '0px 0px',
     });
-    
+
+    const { language } = useLanguage();
+
+    const data: User = {
+        name: "Lucas Henrique Oliveira de Amorim",
+        username: 'Lucas Oliveira',
+        birthday: new Date('2004-03-24'),
+        email: "lucasrazebra@gmail.com",
+        works: translations[language]['user']['works'],
+        location: translations[language]['user']['location'],
+        descriptions: translations[language]['user']['descriptions'] as string[],
+        specializes: [
+            {
+                id: 1,
+                icon: <CodeIcon sx={propsIcon} />,
+                time: new Date('2021-09-30'),
+                specialize: translations[language]['user']['specializes']['developer'],
+                variante: "1",
+            },
+            {
+                id: 2,
+                icon: <WorkIcon sx={propsIcon} />,
+                time: new Date('2022-09-01'),
+                specialize: translations[language]['user']['specializes']['work'],
+                variante: "2",
+            },
+            {
+                id: 3,
+                icon: <BrushIcon sx={propsIcon} />,
+                time: new Date('2022-09-01'),
+                specialize: translations[language]['user']['specializes']['design'],
+                variante: "1",
+            }
+        ],
+        timeSpecializes: [
+            {
+                id: 1,
+                specialize: translations[language]['user']['timeSpecializes']['developer']['specialize'],
+                variante: translations[language]['user']['timeSpecializes']['developer']['variante']
+            },
+            {
+                id: 2,
+                specialize: translations[language]['user']['timeSpecializes']['experiences']['specialize'],
+                variante: translations[language]['user']['timeSpecializes']['experiences']['variante']
+            },
+            {
+                id: 3,
+                specialize: translations[language]['user']['timeSpecializes']['UI&UX']['specialize'],
+                variante: translations[language]['user']['timeSpecializes']['UI&UX']['variante']
+            },
+        ],
+        worksProjects: [
+            {
+                id: 1,
+                name: translations[language]['user']['worksProjects']['Portal Leadtax']['name'],
+                description: translations[language]['user']['worksProjects']['Portal Leadtax']['description'],
+                technologies: ["React JS", "Typescript", "Figma", "Laravel", "AWS"],
+                links: [
+                    {
+                        id: 1,
+                        type: "WebSite",
+                        link: "https://portal.lead.tax",
+                        icon: <LanguageIcon sx={propsIcon2} />
+                    }
+                ],
+                img: portalleadtaxImg
+            },
+            {
+                id: 3,
+                name: translations[language]['user']['worksProjects']['Beecare']['name'],
+                description: translations[language]['user']['worksProjects']['Beecare']['description'],
+                technologies: ["WebScraping", "RPA's"],
+                links: [
+                    {
+                        id: 1,
+                        type: "WebSite",
+                        link: "https://beecare.bionexo.com",
+                        icon: <LanguageIcon sx={propsIcon2} />
+                    }
+                ],
+                img: beecareImg
+            },
+            {
+                id: 4,
+                name: translations[language]['user']['worksProjects']['UltraCar']['name'],
+                description: translations[language]['user']['worksProjects']['UltraCar']['description'],
+                technologies: ["React", "Typescript", "Material UI"],
+                links: [
+                    {
+                        id: 2,
+                        type: "WebSite",
+                        link: "https://ultracarr.com.br",
+                        icon: <LanguageIcon sx={propsIcon2} />
+                    }
+                ],
+                img: ultracar
+            },
+            {
+                id: 2,
+                name: translations[language]['user']['worksProjects']['Plante uma Árvore']['name'],
+                description: translations[language]['user']['worksProjects']['Plante uma Árvore']['description'],
+                technologies: ["React JS", "Css", "Typescript"],
+                links: [
+                    {
+                        id: 1,
+                        type: "WebSite",
+                        link: "https://planteumaarvoreoficial.com.br",
+                        icon: <LanguageIcon sx={propsIcon2} />
+                    }
+                ],
+                img: puaimg
+            },
+            {
+                id: 6,
+                name: translations[language]['user']['worksProjects']['CatalogoApp']['name'],
+                description: translations[language]['user']['worksProjects']['CatalogoApp']['description'],
+                technologies: ["React Native", "GraphQl", "Typescript"],
+                links: [
+                    {
+                        id: 1,
+                        type: "WebSite",
+                        link: "https://web.catalogoapp.mobi",
+                        icon: <LanguageIcon sx={propsIcon2} />
+                    },
+                    {
+                        id: 2,
+                        type: "Play Store",
+                        link: "https://play.google.com/store/apps/details?id=mobi.catalogoapp&hl=pt_BR&gl=US&pli=1",
+                        icon: <PlayArrowIcon sx={propsIcon2} />
+                    },
+                    {
+                        id: 3,
+                        type: "App Store",
+                        link: "https://apps.apple.com/br/app/catálogo-app/id1541545374",
+                        icon: <AppleIcon sx={propsIcon2} />
+                    },
+
+                ],
+                img: catologoApp
+            },
+            {
+                id: 5,
+                name: translations[language]['user']['worksProjects']['UniComunica']['name'],
+                description: translations[language]['user']['worksProjects']['UniComunica']['description'],
+                technologies: ["Next.js", "MongoDB", "GraphQl", "Node.js"],
+                links: [
+                    {
+                        id: 1,
+                        type: "WebSite",
+                        link: "https://webapp-chi-one.vercel.app",
+                        icon: <LanguageIcon sx={propsIcon2} />
+                    }
+                ],
+                img: unicomunica
+            }
+        ],
+        techsAll: {
+            techsUseToday: [
+                reactImg,
+                phpImg,
+                awsImg,
+                typescriptImg,
+                jsImg,
+                cssImg,
+                figmaImg,
+                mysqlLogo
+            ],
+            techsUtils: [
+                githubImg,
+                gitImg,
+                nodeImg,
+                sassImg,
+                reactNativeImg,
+                mongodbImg,
+                vueImg,
+                htmlImg
+            ]
+        },
+        contactInfo: [
+            {
+                icon: <HomeIcon sx={{ fontSize: 20 }} />,
+                text: translations[language]['user']['contactInfo']['location']
+            },
+            {
+                icon: <EmailIcon sx={{ fontSize: 20 }} />,
+                text: translations[language]['user']['contactInfo']['email']
+            },
+            {
+                icon: <PhoneAndroidIcon sx={{ fontSize: 20 }} />,
+                text: translations[language]['user']['contactInfo']['phone']
+            }
+        ],
+        linksSocialMedias: [
+            {
+                id: 1,
+                type: "Lucas-Jav",
+                link: "https://github.com/Lucas-Jav",
+                icon: <GitHubIcon sx={{ fontSize: 20 }} />
+            },
+            {
+                id: 2,
+                type: "oliveiradilucas",
+                link: "https://www.linkedin.com/in/oliveiradilucas/",
+                icon: <LinkedIn sx={{ fontSize: 20 }} />
+            },
+            {
+                id: 3,
+                type: "Whatsapp",
+                link: "https://api.whatsapp.com/send/?phone=5534992129901&text=Ol%C3%A1+Lucas%2C+vim+pelo+seu+trabalho+de+desenvolvedor%21&type=phone_number&app_absent=0",
+                icon: <WhatsApp sx={{ fontSize: 20 }} />
+            }
+        ],
+        professionalArea: [
+            {
+                name: translations[language]["user"]["areas"]["professional"]["name"],
+                dateFormated: translations[language]["user"]["areas"]["professional"]["dateFormated"],
+                history: [
+                    {
+                        title: translations[language]["user"]["areas"]["professional"]["history"]["Desenvolvedor Full Stack na Leadtax"]["title"],
+                        description: translations[language]["user"]["areas"]["professional"]["history"]["Desenvolvedor Full Stack na Leadtax"]["description"],
+                        dateFormated: translations[language]["user"]["areas"]["professional"]["history"]["Desenvolvedor Full Stack na Leadtax"]["dateFormated"],
+                        date: new Date("2024-01-15")
+                    },
+                    {
+                        title: translations[language]["user"]["areas"]["professional"]["history"]["Desenvolvedor React Trainee na Supliu"]["title"],
+                        description: translations[language]["user"]["areas"]["professional"]["history"]["Desenvolvedor React Trainee na Supliu"]["description"],
+                        dateFormated: translations[language]["user"]["areas"]["professional"]["history"]["Desenvolvedor React Trainee na Supliu"]["dateFormated"],
+                        date: new Date("2023-08-22"),
+                        date_end: new Date("2024-01-15")
+                    },
+                    {
+                        title: translations[language]["user"]["areas"]["professional"]["history"]["Desenvolvedor Front-End no Patos Hoje"]["title"],
+                        description: translations[language]["user"]["areas"]["professional"]["history"]["Desenvolvedor Front-End no Patos Hoje"]["description"],
+                        dateFormated: translations[language]["user"]["areas"]["professional"]["history"]["Desenvolvedor Front-End no Patos Hoje"]["dateFormated"],
+                        date: new Date("2022-11-18")
+                    },
+                ]
+            },
+            {
+                name: translations[language]["user"]["areas"]["academic"]["name"],
+                dateFormated: translations[language]["user"]["areas"]["academic"]["dateFormated"],
+                history: [
+                    {
+                        title: translations[language]["user"]["areas"]["academic"]["history"]["Ciência da Computação"]["title"],
+                        description: translations[language]["user"]["areas"]["academic"]["history"]["Ciência da Computação"]["description"],
+                        dateFormated: translations[language]["user"]["areas"]["academic"]["history"]["Ciência da Computação"]["dateFormated"],
+                        date: new Date("2023-01-12")
+                    },
+                    {
+                        title: translations[language]["user"]["areas"]["academic"]["history"]["Desenvolvedor Full Stack"]["title"],
+                        description: translations[language]["user"]["areas"]["academic"]["history"]["Desenvolvedor Full Stack"]["description"],
+                        dateFormated: translations[language]["user"]["areas"]["academic"]["history"]["Desenvolvedor Full Stack"]["dateFormated"],
+                        date: new Date("2022-03-03"),
+                        date_end: new Date("2024-05-10")
+                    },
+                    {
+                        title: translations[language]["user"]["areas"]["academic"]["history"]["Fundamentos AWS Cloud"]["title"],
+                        description: translations[language]["user"]["areas"]["academic"]["history"]["Fundamentos AWS Cloud"]["description"],
+                        dateFormated: translations[language]["user"]["areas"]["academic"]["history"]["Fundamentos AWS Cloud"]["dateFormated"],
+                        date: new Date("2023-04-01"),
+                        date_end: new Date("2023-07-18")
+                    },
+                ]
+            },
+        ]
+    }
+
     const [isHeaderVisible, setIsHeaderVisible] = useState(false);
-    
+
     useEffect(() => {
         const handleScroll = () => {
             setIsHeaderVisible(window.scrollY > 0);
         };
-    
+
         window.addEventListener('scroll', handleScroll);
-    
+
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
@@ -365,35 +358,35 @@ function Home() {
                 color: "text.primary",
             }}
         >
-            {inView && isHeaderVisible  && <Header />}
+            {inView && isHeaderVisible && <Header />}
 
-            <Presentation 
-                name={data.username} 
-                works={data.works}/>
-            
+            <Presentation
+                name={data.username}
+                works={data.works} />
+
             <Box ref={ref}>
                 <About
-                    data={data}/>
+                    data={data} />
             </Box>
-            
-            <BannerInfo 
+
+            <BannerInfo
                 specializes={data.specializes}
-                timeSpecializes={data.timeSpecializes}/>
+                timeSpecializes={data.timeSpecializes} />
 
-            <Box id="projectos"/>
+            <Box id="projects" />
 
-            <WorksProjects 
-                worksProjects={data.worksProjects}/>
+            <WorksProjects
+                worksProjects={data.worksProjects} />
 
-            <Techs 
-                techsAll={data.techsAll}/>
+            <Techs
+                techsAll={data.techsAll} />
 
-            <Traject 
-                allHistory={data.professionalArea}/>
+            <Traject
+                allHistory={data.professionalArea} />
 
-            <Contact 
+            <Contact
                 contactInfo={data.contactInfo}
-                linksSocialMedia={data.linksSocialMedias}/>
+                linksSocialMedia={data.linksSocialMedias} />
 
             <Footer />
 

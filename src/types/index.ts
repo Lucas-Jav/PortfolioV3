@@ -38,7 +38,7 @@ export interface User {
     username: string;
     email: string;
     birthday: Date;
-    works: string[];
+    works: readonly string[];
     location: Location;
     descriptions: string[];
     specializes: Specializes[];

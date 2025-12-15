@@ -5,7 +5,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 
 interface PresentationProps {
     name: string;
-    works: string[];
+    works: readonly string[];
 }
 
 function Presentation({

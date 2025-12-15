@@ -3,6 +3,8 @@ import Box from '@mui/material/Box';
 import Navicon from '../NavIcon/Index';
 import { Location } from '../../types';
 import { calcYears } from '../../utils/mask';
+import { useLanguage } from '../../i18n/LanguageContext';
+import { translations } from '../../i18n/translations';
 
 interface LeftBlockProps {
     name: string;
@@ -16,13 +18,14 @@ function LeftBlock({
     location
 }: LeftBlockProps) {
     const currentYear = calcYears(birthday, new Date())
+    const { language } = useLanguage();
     return (
         <Box 
         data-aos="fade-up"
         data-aos-duration="2000"
             className="blockAbout">
                 <Navicon  
-                    subTitle='sobre-mim'/>
+                    subTitle={translations[language]['about']['aboutMe']}/>
                 <Typography
                     className='montserratBold'
                     variant='h3'>

@@ -1,6 +1,8 @@
 import { Box, Typography, useMediaQuery } from "@mui/material";
 import { User } from "../../types"
 import { calcularDiferencaEntreDatas } from "../../utils/mask";
+import { useLanguage } from "../../i18n/LanguageContext";
+import { translations } from "../../i18n/translations";
 
 interface TrajectProps {
     allHistory: User["professionalArea"];
@@ -11,6 +13,8 @@ function Traject({
 } : TrajectProps) {
     const media1400 = useMediaQuery("(max-width: 1400px)");
     const media1200 = useMediaQuery("(max-width: 1200px)");
+
+    const { language } = useLanguage();
 
     return (
         <Box
@@ -39,7 +43,7 @@ function Traject({
                             fontWeight: "700",
                             textAlign: "center"
                         }}>
-                        Trajetória até aqui
+                        {translations[language]['trajectory']['journeySoFar']}
                     </Typography>
 
                     <Box
@@ -135,7 +139,7 @@ function Traject({
                                                         fontSize="1.125rem"
                                                         fontWeight={700}
                                                         fontFamily="Raleway">
-                                                            {calcularDiferencaEntreDatas(obj.date, obj.date_end)}
+                                                            {calcularDiferencaEntreDatas(obj.date, obj.date_end, language)}
                                                     </Typography>
                                                     <Typography
                                                         fontSize="1.125rem"

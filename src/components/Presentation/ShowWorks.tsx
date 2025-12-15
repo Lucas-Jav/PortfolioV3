@@ -2,7 +2,7 @@ import { Typography } from "@mui/material";
 import { useState, useEffect } from "react";
 
 interface ShowWorksProps {
-    works: string[];
+    works: readonly string[];
 }
 
 function ShowWorks({ works }: ShowWorksProps) {
