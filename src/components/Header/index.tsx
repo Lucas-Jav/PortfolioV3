@@ -64,7 +64,7 @@ export default function Header(props: Props) {
                 color: "#fff",
                 height: "100%",
             }}>
-            <Typography variant="h6" sx={{ my: 2 }}>
+            <Typography variant="h6" component="div" sx={{ my: 2 }}>
                 Menu
             </Typography>
             <Divider color='#ccc' />

@@ -34,6 +34,7 @@ function Traject({
                         justifyContent: "center",
                     }}>
                     <Typography
+                    component="h2"
                     data-aos="fade-up"
                     data-aos-duration={`1100`}
                         sx={{
@@ -58,6 +59,7 @@ function Traject({
                             data-aos-duration={`${index * 2 + 10}00`}
                                 key={history.name}>
                                 <Typography
+                                    component="h3"
                                     sx={{
                                         color: "#fff",
                                         fontFamily: "Raleway",
@@ -68,6 +70,7 @@ function Traject({
                                     {history.name}
                                 </Typography>
                                 <Typography
+                                    component="p"
                                     sx={{
                                         color: "#FFFFFF80",
                                         fontFamily: "Raleway",

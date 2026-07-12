@@ -53,8 +53,7 @@ function ShowWorks({ works }: ShowWorksProps) {
     return (
         <Typography 
             variant="h5"
-            data-aos="fade-up"
-            data-aos-duration="6000"
+            component="p"
             sx={{
                 height: 10,
                 textAlign: "center",

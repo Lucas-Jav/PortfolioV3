@@ -3,12 +3,25 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Home from './pages/Home';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { LanguageProvider } from './i18n/LanguageContext';
+import { LanguageProvider, useLanguage } from './i18n/LanguageContext';
 
-export default function App() {
+function AppContent() {
+  const { language } = useLanguage();
+
   useEffect(() => {
-    AOS.init();
+    AOS.init({
+      once: true,
+      disableMutationObserver: true,
+    });
   }, []);
+
+  useEffect(() => {
+    const refreshTimer = window.setTimeout(() => {
+      AOS.refreshHard();
+    }, 0);
+
+    return () => window.clearTimeout(refreshTimer);
+  }, [language]);
 
   const theme = useMemo(
     () =>
@@ -32,10 +45,16 @@ export default function App() {
   );
 
   return (
+    <ThemeProvider theme={theme}>
+      <Home />
+    </ThemeProvider>
+  );
+}
+
+export default function App() {
+  return (
     <LanguageProvider>
-      <ThemeProvider theme={theme}>
-        <Home />
-      </ThemeProvider>
+      <AppContent />
     </LanguageProvider>
   );
 }

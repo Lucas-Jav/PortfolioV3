@@ -33,7 +33,8 @@ function WorksProjects({
                             subTitle={translations[language]['worksProjects']['projects']}/>
                         <Typography
                             className='montserratBold'
-                            variant='h3'>
+                            variant='h3'
+                            component="h2">
                                 {translations[language]['worksProjects']['worksAndProjects']}
                         </Typography>
                 </Box>

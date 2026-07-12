@@ -39,6 +39,7 @@ function CardsProjects({
                     }}>
                         <Box>
                             <Typography
+                                component="h3"
                                 sx={{
                                     fontFamily: "Montserrat",
                                     fontSize: "1.25rem",
@@ -99,9 +100,11 @@ function CardsProjects({
                                     objectFit: "cover",
                                     overflow: "hidden"
                                 }}
-                                srcSet={worksProject.img}
                                 alt={worksProject.name}
                                 src={worksProject.img}
+                                width={416}
+                                height={216}
+                                decoding="async"
                                 loading='lazy'/>
 
                                 <Box 

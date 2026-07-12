@@ -11,6 +11,7 @@ export type Translation = {
   };
   about: {
     aboutMe: string;
+    downloadCv: string;
   }
   contact: {
     contacts: string;
@@ -129,6 +130,7 @@ export const translations: Record<"pt" | "en", Translation> = {
     },
     about: {
       aboutMe: "Sobre mim",
+      downloadCv: "Baixar currículo",
     },
     others: {
       year: "ano",
@@ -168,7 +170,7 @@ export const translations: Record<"pt" | "en", Translation> = {
       writeYourMessage: "Digite sua mensagem",
       send: "Enviar",
       contactInformation: "Informações de Contato",
-      contactInformationText: "Se você apreciou o meu trabalho e está buscando um profissional comprometido e apaixonado para colaborar em projetos inovadores, estou à disposição para discutir como posso contribuir para o seu próximo desafio. Com anos de experiência no desenvolvimento de soluções criativas e eficazes, estou pronto para ajudá-lo a atingir seus objetivos.",
+      contactInformationText: "Atuo como desenvolvedor Full Stack com foco em React, TypeScript, Laravel, PHP, AWS e UX/UI. Se você precisa evoluir um produto web, criar interfaces performáticas ou integrar front-end, back-end e cloud com qualidade, estou disponível para conversar sobre o seu próximo desafio.",
     },
     user: {
       works: [
@@ -181,11 +183,8 @@ export const translations: Record<"pt" | "en", Translation> = {
         country: "Brasil",
       },
       descriptions: [
-        `Olá! Me chamo Lucas Oliveira, um entusiasta do desenvolvimento Front-End, 
-        apaixonado por transformar ideias em experiências digitais cativantes.`,
-        `Estou comprometido em criar soluções web inovadoras e acessíveis, 
-        transformando visões em realidade digital. Se você está procurando por um desenvolvedor Front-End dedicado, 
-        versátil e apaixonado, estou aqui para trazer sua visão à vida. Vamos colaborar e construir algo incrível juntos!`,
+        `Olá! Me chamo Lucas Oliveira, desenvolvedor Full Stack com experiência em React, TypeScript, Laravel, PHP, AWS e UX/UI.`,
+        `Crio produtos web responsivos, acessíveis e performáticos, conectando interfaces bem desenhadas com APIs, automações e arquitetura em cloud. Tenho experiência em portais financeiros, integrações para saúde, aplicativos e projetos com foco em usabilidade e SEO.`,
       ],
       specializes: {
         developer: "Desenvolvedor",
@@ -250,19 +249,19 @@ export const translations: Record<"pt" | "en", Translation> = {
             "Desenvolvedor Full Stack na Leadtax": {
               title: "Desenvolvedor Full Stack na Leadtax",
               description:
-                "Desenvolvimento de sistemas front end em react typescript, back end utilizando Laravel PHP e UI & UX designer, arquitetura em Cloud na AWS.",
+                "Desenvolvimento de sistemas web com React, TypeScript, Laravel e PHP, além de UX/UI, automações financeiras, gestão de clientes e arquitetura em cloud na AWS.",
               dateFormated: "Janeiro/2024 · Atualmente",
             },
             "Desenvolvedor React Trainee na Supliu": {
               title: "Desenvolvedor React Trainee na Supliu",
               description:
-                "Desenvolvimento de sistemas em React e React Native, criando novas features e ferramentas.",
+                "Desenvolvimento de aplicações em React e React Native, criando features, ferramentas e melhorias para produtos digitais.",
               dateFormated: "Agosto/2023 · Janeiro/2024",
             },
             "Desenvolvedor Front-End no Patos Hoje": {
               title: "Desenvolvedor Front-End no Patos Hoje",
               description:
-                "Colocar em prática, através de códigos, projetar o visual do site responsivo, otimização e correção de bugs, melhorar a usabilidade, utilizando as tecnologias: HTML, CSS, JavaScript e Vue.js.",
+                "Implementação de interfaces responsivas, otimização de performance, correção de bugs e melhorias de usabilidade com HTML, CSS, JavaScript e Vue.js.",
               dateFormated: "Novembro/2022 · Atualmente",
             },
           },
@@ -313,6 +312,7 @@ export const translations: Record<"pt" | "en", Translation> = {
     },
     about: {
       aboutMe: "About me",
+      downloadCv: "Download resume",
     },
     worksProjects: {
       projects: "Projects",
@@ -344,7 +344,7 @@ export const translations: Record<"pt" | "en", Translation> = {
       send: "Send",
       contactInformation: "Contact Information",
       contactInformationText:
-        "If you enjoyed my work and are looking for a committed and passionate professional to collaborate on innovative projects, I would be happy to discuss how I can contribute to your next challenge. With years of experience developing creative and effective solutions, I am ready to help you achieve your goals.",
+        "I work as a Full Stack Developer focused on React, TypeScript, Laravel, PHP, AWS, and UX/UI. If you need to improve a web product, build performant interfaces, or connect front-end, back-end, and cloud architecture with quality, I am available to discuss your next challenge.",
     },
     user: {
       works: [
@@ -357,11 +357,8 @@ export const translations: Record<"pt" | "en", Translation> = {
         country: "Brazil",
       },
       descriptions: [
-        `Hello! My name is Lucas Oliveira, a Front-End development enthusiast,
-        passionate about transforming ideas into captivating digital experiences.`,
-        `I am committed to creating innovative and accessible web solutions,
-        transforming visions into digital reality. If you are looking for a dedicated,
-        versatile and passionate Front-End developer, I am here to bring your vision to life. Let's collaborate and build something amazing together!`,
+        `Hello! My name is Lucas Oliveira, a Full Stack Developer experienced with React, TypeScript, Laravel, PHP, AWS, and UX/UI.`,
+        `I build responsive, accessible, and performant web products, connecting well-designed interfaces with APIs, automations, and cloud architecture. I have worked on financial portals, healthcare integrations, apps, and projects focused on usability and SEO.`,
       ],
       specializes: {
         developer: "Developer",
@@ -428,7 +425,7 @@ export const translations: Record<"pt" | "en", Translation> = {
             "Desenvolvedor Full Stack na Leadtax": {
               title: "Full Stack Developer at Leadtax",
               description:
-                "Development of front-end systems using React and TypeScript, back-end development with Laravel (PHP), UI & UX design, and cloud architecture on AWS.",
+                "Development of web systems with React, TypeScript, Laravel, and PHP, including UX/UI, financial automations, customer management, and AWS cloud architecture.",
               dateFormated: "January/2024 · Present",
             },
             "Desenvolvedor React Trainee na Supliu": {

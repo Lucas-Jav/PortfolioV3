@@ -51,7 +51,6 @@ import { useEffect, useState } from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
 import { translations } from '../i18n/translations';
 
-
 const propsIcon = {
     color: "#EE7070",
     height: "3.125rem",
@@ -343,7 +342,8 @@ function Home() {
             setIsHeaderVisible(window.scrollY > 0);
         };
 
-        window.addEventListener('scroll', handleScroll);
+        handleScroll();
+        window.addEventListener('scroll', handleScroll, { passive: true });
 
         return () => {
             window.removeEventListener('scroll', handleScroll);
@@ -352,6 +352,7 @@ function Home() {
 
     return (
         <Box
+            component="main"
             sx={{
                 width: "100%",
                 minHeight: "100vh",

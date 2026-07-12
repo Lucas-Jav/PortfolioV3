@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, ReactNode } from "react";
+import { createContext, useContext, useEffect, useState, ReactNode } from "react";
 import { translations, Language, Translation } from "./translations";
 import { MenuItem, Select } from "@mui/material";
 
@@ -31,6 +31,10 @@ const LanguageContext = createContext<LanguageContextData | null>(null);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
     const [language, setLanguage] = useState<Language>(() => getInitialLanguage());
+
+    useEffect(() => {
+        document.documentElement.lang = language === "pt" ? "pt-BR" : "en";
+    }, [language]);
 
     function toggleLanguage(lang: Language) {
         setLanguage(lang);

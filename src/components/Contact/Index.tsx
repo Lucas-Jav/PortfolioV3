@@ -117,7 +117,8 @@ ${data.text}
                             subTitle={translations[language]['contact']['contacts']}/>
                         <Typography
                             className='montserratBold'
-                            variant='h3'>
+                            variant='h3'
+                            component="h2">
                                 {translations[language]['contact']['letsTalk']}
                         </Typography>
                 </Box>

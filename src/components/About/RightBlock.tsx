@@ -1,6 +1,7 @@
 import { Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import Navicon from '../NavIcon/Index';
+import { useLanguage } from '../../i18n/LanguageContext';
 
 interface RightBlockProps {
     descriptions: string[];
@@ -9,6 +10,8 @@ interface RightBlockProps {
 function RightBlock({
     descriptions
 }: RightBlockProps) {
+    const { t } = useLanguage();
+
     return (
         <Box
         data-aos="fade-up"
@@ -29,13 +32,14 @@ function RightBlock({
                             color="#54595F"
                             className='robotoMedium'
                             variant='subtitle1' 
+                            component="p"
                             key={index}>
                             {description}
                         </Typography>
                     ))}
                 </Box>
                 <Navicon 
-                    subTitle='donwload cv'
+                    subTitle={t.about.downloadCv}
                     downloadCv/>
         </Box>
     )

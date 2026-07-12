@@ -28,7 +28,8 @@ function LeftBlock({
                     subTitle={translations[language]['about']['aboutMe']}/>
                 <Typography
                     className='montserratBold'
-                    variant='h3'>
+                    variant='h3'
+                    component="h2">
                         {name}, {currentYear} anos, {""}
                         {location.country}, {location.state}
                 </Typography>

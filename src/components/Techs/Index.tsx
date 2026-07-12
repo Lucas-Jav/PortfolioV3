@@ -32,6 +32,7 @@ function Techs({
                         justifyContent: "center"
                     }}>
                     <Typography
+                    component="h2"
                     data-aos="fade-up"
                     data-aos-duration={`1000`}
                         sx={{
@@ -45,6 +46,7 @@ function Techs({
                     </Typography>
 
                     <Typography
+                    component="p"
                     data-aos="fade-up"
                     data-aos-duration={`1100`}
                         sx={{
@@ -81,6 +83,7 @@ function Techs({
                     </Box>
 
                     <Typography
+                    component="p"
                     data-aos="fade-up"
                     data-aos-duration={`1100`}
                         sx={{
